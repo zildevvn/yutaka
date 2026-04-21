@@ -1,0 +1,97 @@
+.news-content-section {
+    padding-top: 60px;
+    padding-bottom: 110px;
+
+    @include media-breakpoint-down(md) {
+        padding-top: 30px;
+        padding-bottom: 50px;
+    }
+
+    .news-list {
+        border-top: 1px solid #eaeaea;
+    }
+
+    .news-item {
+        border-bottom: 1px solid #eaeaea;
+        transition: $transition-base;
+
+        &:hover {
+            background-color: rgba($color-primary, 0.05);
+
+            .news-item__title {
+                color: $color-primary;
+            }
+        }
+
+        // Highlight class for items that should stand out (like the one in design)
+        &.featured {
+            background-color: rgba($color-primary, 0.05);
+        }
+
+        &__wrapper {
+            display: flex;
+            align-items: baseline; // Align date with the first line of text
+            padding: 30px 15px;
+            text-decoration: none !important;
+            color: inherit;
+            gap: 50px;
+
+            @include media-breakpoint-down(lg) {
+                gap: 30px;
+            }
+
+            @include media-breakpoint-down(md) {
+                padding: 15px 10px;
+                gap: 10px;
+                flex-direction: column;
+            }
+        }
+
+        &__date {
+            font-family: $font-second;
+            color: $color-primary;
+            font-weight: 500;
+            font-size: 18px;
+            letter-spacing: 0.05em;
+            flex-shrink: 0;
+            min-width: 120px;
+
+            @include media-breakpoint-down(md) {
+                font-size: 14px;
+                min-width: auto;
+                margin-bottom: 5px;
+            }
+        }
+
+        &__content {
+            flex: 1;
+            width: 100%;
+        }
+
+        &__title {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.6;
+            color: #555;
+            font-family: $font-primary;
+            transition: color 0.3s ease;
+
+            @include media-breakpoint-down(lg) {
+                font-size: 16px;
+            }
+
+            @include media-breakpoint-down(md) {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .blog-pagination {
+        margin-top: 60px;
+
+        @include media-breakpoint-down(md) {
+            margin-top: 30px;
+        }
+    }
+}

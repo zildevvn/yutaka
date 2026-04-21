@@ -1,0 +1,23 @@
+.sazukaru-btn {
+    background: $color-primary;
+    max-width: fit-content;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    height: 60px;
+    text-decoration: none;
+    padding-right: 30px;
+    padding-left: 95px;
+
+    @media (max-width: 767.98px) {
+        height: 40px;
+        font-size: 14px;
+        letter-spacing: 0.06em;
+    }
+
+    &.is-style-secondary {
+        background: #fff;
+        color: $color-primary;
+    }
+}

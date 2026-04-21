@@ -1,0 +1,224 @@
+body {
+    &:not(.home):not(.page-template-about-template):not(.page-template-program-1-template):not(.page-template-program-2-template):not(.page-template-blog-template):not(.page-template-company-template):not(.page-template-contact-template):not(.page-template-new-template) {
+        h2 {
+            border-radius: 5px;
+            color: #fff;
+            background: linear-gradient(90deg, $color-primary 0%, $color-secondary 100%);
+            padding: 0px 20px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 73px;
+            margin: 0 0 60px 0;
+
+            @include media-breakpoint-down(lg) {
+                height: 60px;
+                margin-bottom: 48px;
+            }
+
+            @include media-breakpoint-down(md) {
+                height: 43px;
+                padding: 0 12px;
+                margin-bottom: 35px;
+            }
+        }
+
+        h3 {
+            position: relative;
+            padding-bottom: 20px;
+            color: $color-primary;
+            margin-bottom: 30px;
+
+            @include media-breakpoint-down(lg) {
+                margin-bottom: 24px;
+            }
+
+            @include media-breakpoint-down(md) {
+                margin-bottom: 16px;
+            }
+
+            &::before {
+                content: " ";
+                display: inline-block;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 30%;
+                max-width: 111px;
+                height: 5px;
+                background: linear-gradient(90deg, #e9aeb6 0%, #00c7d0 100%);
+            }
+        }
+    }
+}
+
+
+.hero-section {
+    padding: 180px 0;
+
+    @include media-breakpoint-down(lg) {
+        padding-top: 120px;
+        padding-bottom: 100px;
+    }
+
+    @include media-breakpoint-down(md) {
+        padding-top: 80px;
+        padding-bottom: 72px;
+    }
+
+    h1,
+    p {
+        color: #fff;
+        text-align: center;
+    }
+
+    h1 {
+        font-family: $font-second;
+        font-size: 60px;
+        letter-spacing: 0.06em;
+        font-weight: 500;
+
+        @include media-breakpoint-down(xl) {
+            font-size: 48px;
+        }
+
+        @include media-breakpoint-down(lg) {
+            font-size: 32px;
+        }
+
+        @include media-breakpoint-down(md) {
+            font-size: 27px;
+            letter-spacing: 0.03em;
+        }
+    }
+
+    p {
+        margin-top: 16px;
+
+        @include media-breakpoint-down(md) {
+            margin-top: 10px;
+        }
+    }
+}
+
+.breadcrumbs-section {
+    padding: 40px 0;
+
+    @include media-breakpoint-down(md) {
+        padding: 30px 0;
+    }
+
+    p {
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        color: $color-text;
+
+        a {
+            text-decoration: none;
+        }
+
+        a,
+        span {
+            color: $color-primary;
+        }
+
+        span {
+            margin: 0 8px;
+        }
+    }
+}
+
+
+.contact-section {
+    background: $color-primary;
+
+    >.container-full {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    &-inner {
+        >div {
+            width: 50%;
+
+            @include media-breakpoint-down(xl) {
+                width: 100%;
+            }
+        }
+
+        .warp-content {
+            max-width: fit-content;
+            text-align: center;
+
+            h2,
+            p {
+                color: #fff
+            }
+
+            h2 {
+                margin: 12px 0 5px 0 !important;
+                text-transform: uppercase;
+                border-radius: 0 !important;
+                background: transparent !important;
+                padding: 0xx !important;
+                display: inline-block !important;
+                align-items: center;
+                justify-content: center;
+                height: auto !important;
+
+                @include media-breakpoint-down(lg) {
+                    margin: 5px 0 !important;
+                }
+
+            }
+
+            .sazukaru-btn {
+                margin-top: 32px;
+
+                @include media-breakpoint-down(lg) {
+                    margin-top: 24px;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+        }
+    }
+
+    &__left {
+        padding: 80px 130px 130px 0px;
+
+        @include media-breakpoint-down(xl) {
+            padding: 40px 60px 60px 0px;
+        }
+
+        @include media-breakpoint-down(lg) {
+            padding: 32px 20px;
+        }
+    }
+
+    &__icon {
+        @include media-breakpoint-down(lg) {
+            margin-top: 24px;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 60px;
+
+            @include media-breakpoint-down(md) {
+                max-width: 32px;
+            }
+        }
+    }
+
+    &__right {
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}

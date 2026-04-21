@@ -1,0 +1,298 @@
+.page-template-program-2-template {
+    .program-list-section {
+        padding-bottom: 76px;
+
+        @include media-breakpoint-down(md) {
+            padding-bottom: 50px;
+        }
+
+        &-header {
+            text-align: center;
+
+            &__title {
+                color: #e9aeb6;
+                font-size: 30px;
+
+                @include media-breakpoint-down(lg) {
+                    font-size: 26px;
+                }
+
+                @include media-breakpoint-down(md) {
+                    font-size: 23px;
+                }
+            }
+
+            span {
+                width: 22px;
+                height: 22px;
+                border-radius: 50%;
+                background: $color-primary;
+                display: inline-block;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 40px;
+
+                @include media-breakpoint-down(lg) {
+                    margin-top: 24px;
+                }
+
+                @include media-breakpoint-down(md) {
+                    width: 11px;
+                    height: 11px;
+                    margin-top: 12px;
+                }
+            }
+        }
+
+        &-main {
+            margin-top: 100px;
+
+            @include media-breakpoint-down(lg) {
+                margin-top: 60px;
+            }
+
+            @include media-breakpoint-down(md) {
+                margin-top: 24px;
+            }
+
+            .program-item {
+                justify-content: space-between;
+                gap: 32px;
+
+                @include media-breakpoint-down(md) {
+                    gap: 28px;
+                    flex-wrap: wrap;
+                }
+
+                &:nth-child(even) {
+                    flex-direction: row-reverse;
+                }
+
+                &:nth-child(3) {
+                    .program-item__content ul li {
+                        margin-bottom: 10px;
+                    }
+                }
+
+                &:not(:last-child) {
+                    margin-bottom: 80px;
+
+                    @include media-breakpoint-down(lg) {
+                        margin-bottom: 60px;
+                    }
+
+                    @include media-breakpoint-down(md) {
+                        margin-bottom: 30px;
+                    }
+                }
+
+                &__content {
+                    width: 100%;
+                    flex-shrink: 1;
+                    color: $color-text;
+
+                    .heading-special {
+                        position: relative;
+                        padding-bottom: 20px;
+                        color: $color-primary;
+                        margin-bottom: 30px;
+
+                        @include media-breakpoint-down(lg) {
+                            margin-bottom: 24px;
+                        }
+
+                        @include media-breakpoint-down(md) {
+                            margin-bottom: 16px;
+                        }
+
+                        &::before {
+                            content: " ";
+                            display: inline-block;
+                            position: absolute;
+                            left: 0;
+                            bottom: 0;
+                            width: 30%;
+                            max-width: 111px;
+                            height: 5px;
+                            background: linear-gradient(90deg, #e9aeb6 0%, #00c7d0 100%);
+                        }
+                    }
+
+                    ul,
+                    ul li,
+                    p {
+                        margin-bottom: 24px;
+                        line-height: 1.7;
+
+
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+
+                    ul {
+                        padding-left: 24px;
+                    }
+                }
+
+                &__image {
+                    width: 45%;
+                    flex-shrink: 0;
+
+                    @include media-breakpoint-down(md) {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .content-section {
+        padding-bottom: 120px;
+
+        @include media-breakpoint-down(lg) {
+            padding-bottom: 100px;
+        }
+
+        @include media-breakpoint-down(md) {
+            padding-bottom: 70px;
+        }
+
+        &__btn {
+            border-radius: 5px;
+            color: #fff;
+            background: linear-gradient(90deg, $color-primary 0%, $color-secondary 100%);
+            padding: 0px 20px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 73px;
+            margin: 0 0 60px 0;
+
+            @include media-breakpoint-down(lg) {
+                height: 60px;
+                margin-bottom: 48px;
+            }
+
+            @include media-breakpoint-down(md) {
+                height: 43px;
+                padding: 0 12px;
+                margin-bottom: 35px;
+            }
+        }
+
+        &-item {
+            display: flex;
+            justify-content: space-between;
+            gap: 48px;
+            margin-top: 74px;
+
+            @include media-breakpoint-down(lg) {
+                gap: 32px;
+                margin-top: 60px;
+            }
+
+            @include media-breakpoint-down(md) {
+                margin-top: 26px;
+                flex-wrap: wrap;
+                gap: 26px;
+                flex-direction: column-reverse;
+            }
+
+            >div {
+                width: 50%;
+
+                @include media-breakpoint-down(md) {
+                    width: 100%;
+                }
+            }
+
+            .item-left {
+                ul {
+                    padding-left: 20px;
+
+                    &.nav-special {
+                        background: #fff3f2;
+                        padding: 24px 24px 24px 44px;
+                        margin-bottom: 46px;
+
+                        @include media-breakpoint-down(lg) {
+                            margin-bottom: 32px;
+                        }
+
+                        @include media-breakpoint-down(md) {
+                            padding-bottom: 30px;
+                            padding-top: 12px;
+                            padding-right: 12px;
+                            padding-left: 32px;
+                            margin-bottom: 20px;
+                        }
+
+                        li {
+                            color: $color-text;
+                            line-height: 26px;
+
+                            &:not(:last-child) {
+                                margin-bottom: 16px;
+                            }
+                        }
+                    }
+                }
+
+                .group {
+                    &:not(:last-child) {
+                        margin-bottom: 70px;
+
+                        @include media-breakpoint-down(lg) {
+                            margin-bottom: 48px;
+                        }
+
+                        @include media-breakpoint-down(md) {
+                            margin-bottom: 32px;
+                        }
+                    }
+
+                    h3 {
+                        position: relative;
+                        padding-bottom: 16px;
+                        color: $color-primary;
+                        margin-bottom: 20px;
+
+                        @include media-breakpoint-down(md) {
+                            margin-bottom: 16px;
+                        }
+
+                        &::before {
+                            content: " ";
+                            display: inline-block;
+                            position: absolute;
+                            left: 0;
+                            bottom: 0;
+                            width: 30%;
+                            max-width: 111px;
+                            height: 5px;
+                            background: linear-gradient(90deg, #e9aeb6 0%, #00c7d0 100%);
+                        }
+                    }
+
+                    ul {
+                        margin-bottom: 24px;
+
+                        li {
+                            color: $color-text;
+
+                            &:not(:last-child) {
+                                margin-bottom: 16px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        p {
+            color: $color-text;
+        }
+    }
+}

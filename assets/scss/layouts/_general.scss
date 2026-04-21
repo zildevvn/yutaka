@@ -1,0 +1,76 @@
+.menu-primary {
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
+
+        li {
+            width: 100%;
+            list-style-type: none;
+            box-sizing: border-box;
+
+            @include media-breakpoint-down(lg) {
+                padding: 12px;
+                border-bottom: 1px solid $color-primary;
+            }
+
+            a {
+                text-decoration: none;
+
+                @include media-breakpoint-down(lg) {
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                }
+
+                img {
+                    @include media-breakpoint-down(lg) {
+                        width: 100%;
+                        max-width: 18px;
+                        height: auto;
+                    }
+                }
+
+
+                span {
+                    font-size: 16px;
+                    letter-spacing: 0.06em;
+                    line-height: 30px;
+                    font-family: $font-primary;
+                    font-weight: 500;
+                    color: $color-primary;
+
+                    @include media-breakpoint-down(lg) {
+                        font-size: 12px;
+                        letter-spacing: 0.03em;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sazukaru-socials {
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+
+    @include media-breakpoint-down(lg) {
+        justify-content: start !important;
+        gap: 12px;
+    }
+
+    li {
+        list-style: none;
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 23px;
+        }
+    }
+}

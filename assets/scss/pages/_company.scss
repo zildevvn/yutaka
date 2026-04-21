@@ -1,0 +1,84 @@
+.page-template-company-template {
+    .content-section {
+        padding: 10px 0 80px 0;
+
+        @include media-breakpoint-down(lg) {
+            padding-bottom: 60px;
+        }
+
+        @include media-breakpoint-down(md) {
+            padding-bottom: 48px;
+        }
+
+        &__title {
+            background: linear-gradient(90deg, #e2b4bd 0%, #29c7d0 100%);
+            padding: 12px 24px;
+            margin-bottom: 30px;
+
+            @include media-breakpoint-down(md) {
+                padding: 7px 12px;
+                margin-bottom: 17px;
+            }
+
+            h2 {
+                margin: 0;
+                color: #fff;
+            }
+        }
+
+        &__table {
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                border: 1px solid #d8d8d8;
+
+                tr {
+                    border-bottom: 1px solid #d8d8d8;
+
+                    @include media-breakpoint-down(md) {
+                        display: block;
+                        border-bottom: none;
+                    }
+
+                    &:last-child {
+                        border-bottom: none;
+                    }
+                }
+
+
+                th,
+                td {
+                    padding: 24px 30px;
+                    font-size: 16px;
+                    line-height: 1.6;
+                    font-weight: 500;
+                    vertical-align: middle;
+                    color: $color-text;
+
+                    @include media-breakpoint-down(md) {
+                        padding: 12px;
+                        display: block;
+                        width: 100% !important;
+                    }
+                }
+
+                th {
+                    width: 25%;
+                    background-color: #fff3f2;
+                    text-align: left;
+                    border-right: 1px solid #d8d8d8;
+
+                    @include media-breakpoint-down(md) {
+                        border-bottom: 1px solid #d8d8d8;
+                        border-right: 0;
+                        border-top: 1px solid #d8d8d8;
+                    }
+                }
+
+                td {
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+}

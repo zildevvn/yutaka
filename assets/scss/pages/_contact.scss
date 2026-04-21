@@ -1,0 +1,59 @@
+.page-template-contact-template {
+    .content-section {
+        padding: 10px 0 110px 0;
+
+        @include media-breakpoint-down(lg) {
+            padding-bottom: 60px;
+        }
+
+        @include media-breakpoint-down(md) {
+            padding-bottom: 48px;
+        }
+
+        >.container {
+            text-align: center;
+
+            h2 {
+                color: #e9aeb6;
+                margin: 0;
+            }
+        }
+
+        .icon {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: $color-primary;
+            display: inline-block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 24px;
+
+            // @include media-breakpoint-down(lg) {
+            //     margin-top: 24px;
+            // }
+
+            @include media-breakpoint-down(md) {
+                width: 11px;
+                height: 11px;
+                margin-top: 12px;
+            }
+        }
+
+        &__form {
+            width: 100%;
+            max-width: 882px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 53px;
+
+            @include media-breakpoint-down(lg) {
+                margin-top: 30px;
+            }
+
+            @include media-breakpoint-down(md) {
+                margin-top: 20px;
+            }
+        }
+    }
+}
