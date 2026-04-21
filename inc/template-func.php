@@ -1,6 +1,6 @@
 <?php
 
-function sazukaru_post_item()
+function yutaka_post_item()
 {
     $date = get_the_date('F j, Y');
     $categories = get_the_category();
@@ -67,26 +67,26 @@ function sazukaru_post_item()
     </div>
 <?php }
 
-function sazukaru_hero_section($title = '', $sub_title = '', $image = '', $image_mb = '')
+function yutaka_hero_section($title = '', $sub_title = '', $image = '', $image_mb = '')
 { ?>
-    <section class="sazukaru-section hero-section">
-        <div class="sazukaru-section__bg">
+    <section class="yutaka-section hero-section">
+        <div class="yutaka-section__bg">
             <img class="d-none d-md-block" src="<?= $image ?>" alt="bg-hero" />
             <img class="d-md-none" src="<?= $image_mb ?>" alt="bg-hero-mb" />
         </div>
 
         <div class="container">
-            <h1 class="sazukaru-hero-section__title mb-0">
+            <h1 class="yutaka-hero-section__title mb-0">
                 <?= $title ?>
             </h1>
-            <p class="sazukaru-hero-section__sub-title mb-0">
+            <p class="yutaka-hero-section__sub-title mb-0">
                 <?= $sub_title ?>
             </p>
         </div>
     </section>
 <?php }
 
-function sazukaru_breadcrumbs($title)
+function yutaka_breadcrumbs($title)
 {
     ?>
     <section class="breadcrumbs-section">
@@ -100,7 +100,7 @@ function sazukaru_breadcrumbs($title)
     </section>
 <?php }
 
-function sazukaru_breadcrumbs_news($title)
+function yutaka_breadcrumbs_news($title)
 {
     ?>
     <section class="breadcrumbs-section">

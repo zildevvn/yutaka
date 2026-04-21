@@ -18,22 +18,22 @@ function dump($data)
 }
 
 
-if (!function_exists('sazukaru_svg_icon')) {
+if (!function_exists('yutaka_svg_icon')) {
 
 	/**
 	 * @param $icon
 	 *
 	 * @return mixed|string
 	 */
-	function sazukaru_svg_icon($icon)
+	function yutaka_svg_icon($icon)
 	{
 		$icons = require(__DIR__ . '/svg.php');
 		return isset($icons[$icon]) ? $icons[$icon] : '';
 	}
 }
 
-if (!function_exists('sazukaru_the_posts_navigation')) {
-	function sazukaru_the_posts_navigation($args = array(), $base = false, $query = false)
+if (!function_exists('yutaka_the_posts_navigation')) {
+	function yutaka_the_posts_navigation($args = array(), $base = false, $query = false)
 	{
 		$args = wp_parse_args($args, array(
 			'prev_text' => __('Older posts'),
@@ -91,22 +91,17 @@ if (!function_exists('sazukaru_the_posts_navigation')) {
 	}
 }
 
-function sazukaru_get_button($btn_text, $btn_link, $btn_target = '_self', $style = '')
+function yutaka_get_button($btn_text, $btn_link, $btn_target = '_self', $style = '')
 { ?>
 	<a href="<?php echo $btn_link; ?>" target="<?php echo $btn_target; ?>"
-		class="sazukaru-button<?php echo !empty($style) ? ' ' . esc_attr($style) : ''; ?>">
+		class="yutaka-button<?php echo !empty($style) ? ' ' . esc_attr($style) : ''; ?>">
 		<?php echo $btn_text; ?>
-		<svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none"
-			xmlns="http://www.w3.org/2000/svg" color="#000000">
-			<path fill-rule="evenodd" clip-rule="evenodd"
-				d="M8.71299 18.6929C8.43273 18.5768 8.25 18.3033 8.25 18V5.99998C8.25 5.69663 8.43273 5.42315 8.71299 5.30707C8.99324 5.19098 9.31583 5.25515 9.53033 5.46965L15.5303 11.4696C15.8232 11.7625 15.8232 12.2374 15.5303 12.5303L9.53033 18.5303C9.31583 18.7448 8.99324 18.809 8.71299 18.6929Z"
-				fill="#000000"></path>
-		</svg>
+		<img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-arrow-btn.png" alt="icon arrow btn" />
 	</a>
 <?php }
 
 
-function sazukaru_get_posts_by_post_type($post_type, $posts_per_page = 4, $title = '', $sub_title = '', $btn_text = '')
+function yutaka_get_posts_by_post_type($post_type, $posts_per_page = 4, $title = '', $sub_title = '', $btn_text = '')
 {
 	if (empty($post_type)) {
 		return;
@@ -123,7 +118,7 @@ function sazukaru_get_posts_by_post_type($post_type, $posts_per_page = 4, $title
 	$query = new WP_Query($args);
 	?>
 
-	<div class="sazukaru-category-posts">
+	<div class="yutaka-category-posts">
 		<h2 class="category-title ncm-heading-highlight m-0" data-aos="fade-up" data-aos-easing="ease-in-out">
 			<?php echo $title; ?>
 		</h2>
@@ -182,7 +177,7 @@ function sazukaru_get_posts_by_post_type($post_type, $posts_per_page = 4, $title
 
 		<div class="category-view-more d-flex justify-content-center">
 			<?php $link = $post_type == 'activity' ? '/activity' : '/news'; ?>
-			<?php sazukaru_get_button($btn_text, esc_url(home_url($link)), '_self', 'is-style-secondary'); ?>
+			<?php yutaka_get_button($btn_text, esc_url(home_url($link)), '_self', 'is-style-secondary'); ?>
 		</div>
 	</div>
 <?php }
@@ -194,7 +189,7 @@ function sazukaru_get_posts_by_post_type($post_type, $posts_per_page = 4, $title
  * @param int    $posts_per_page Number of posts to retrieve. Default 4.
  * @return void
  */
-function sazukaru_get_posts_by_category($category_slug, $posts_per_page = 4, $title = '')
+function yutaka_get_posts_by_category($category_slug, $posts_per_page = 4, $title = '')
 {
 	if (empty($category_slug)) {
 		return;
@@ -235,7 +230,7 @@ function sazukaru_get_posts_by_category($category_slug, $posts_per_page = 4, $ti
 		$sub_title = $cate_name_jp ?: $category->name;
 		?>
 
-		<div class="sazukaru-category-posts">
+		<div class="yutaka-category-posts">
 			<h2 class="category-title ncm-heading-highlight m-0" data-aos="fade-up" data-aos-easing="ease-in-out">
 				<?php echo esc_html(!empty($title) ? $title : $category->name); ?>
 			</h2>
@@ -295,18 +290,18 @@ function sazukaru_get_posts_by_category($category_slug, $posts_per_page = 4, $ti
 
 			<div class="category-view-more d-flex justify-content-center">
 				<?php $link = $category_slug == 'record' ? '/activity' : '/news'; ?>
-				<?php sazukaru_get_button($view_more_text, esc_url(home_url($link)), '_self', 'is-style-secondary'); ?>
+				<?php yutaka_get_button($view_more_text, esc_url(home_url($link)), '_self', 'is-style-secondary'); ?>
 			</div>
 		</div>
 	<?php endif;
 }
 
 
-function sazukaru_button($btn_text = '', $btn_link, $btn_target = '_self', $btn_class = '', $style = '')
+function yutaka_button($btn_text = '', $btn_link, $btn_target = '_self', $btn_class = '', $style = '')
 {
 	$classed = $style == 'secondary' ? 'is-style-secondary' : '';
 	?>
-	<a class="sazukaru-btn d-flex align-items-center gap-4 <?php echo $btn_class; ?> <?php echo $classed; ?>"
+	<a class="yutaka-btn d-flex align-items-center gap-4 <?php echo $btn_class; ?> <?php echo $classed; ?>"
 		href="<?php echo $btn_link; ?>" target="<?php echo $btn_target; ?>">
 		<?php echo $btn_text; ?>
 

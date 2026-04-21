@@ -1,0 +1,19 @@
+.contact-section {
+    color: #fff;
+    padding-bottom: 110px;
+    padding-top: 70px;
+
+    .yutaka-section__sub-heading {
+        @include media-breakpoint-up(xxl) {
+            font-size: 32px;
+        }
+    }
+
+    .yutaka-section__heading {
+        color: #fff;
+
+        @include media-breakpoint-up(xxl) {
+            font-size: 46px;
+        }
+    }
+}

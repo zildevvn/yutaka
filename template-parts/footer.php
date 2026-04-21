@@ -8,6 +8,9 @@ $company_name = get_field('company_name', 'option');
 $address = get_field('address', 'option');
 ?>
 
+
+<?php get_template_part('template-parts/shared/contact-section'); ?>
+
 <footer class="main-footer">
     <button class="btn-top d-flex align-items-center justify-content-center" type="button"
         aria-label="<?php echo __('Back to top', 'nmc'); ?>">

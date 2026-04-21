@@ -1,7 +1,71 @@
 {
     "key": "group_6836aaa6b5587",
     "title": "Footer Options",
-    "fields": [],
+    "fields": [
+        {
+            "key": "field_69e795ba80db7",
+            "label": "Company name",
+            "name": "company_name_ft",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_69e795da80db8",
+            "label": "Address",
+            "name": "address_ft",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_69e795ebd6096",
+            "label": "Copyright",
+            "name": "copyright_ft",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
     "location": [
         [
             {
@@ -21,5 +85,7 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1772774130
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1776784885
 }

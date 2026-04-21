@@ -4,8 +4,8 @@
  * Template tags
  */
 
-if (!function_exists('sazukaru_template_news_hero_header')) {
-    function sazukaru_template_news_hero_header()
+if (!function_exists('yutaka_template_news_hero_header')) {
+    function yutaka_template_news_hero_header()
     {
         $page_for_posts_id = get_option('page_for_posts');
         $blog_link = get_permalink($page_for_posts_id);
@@ -13,8 +13,8 @@ if (!function_exists('sazukaru_template_news_hero_header')) {
         <div class="news-hero text-center text-white">
             <div class="container">
                 <div class="hero-inner">
-                    <h2 class="sazukaru-title">Blog</h2>
-                    <p class="sazukaru-subtitle"><?= get_bloginfo('description'); ?></p>
+                    <h2 class="yutaka-title">Blog</h2>
+                    <p class="yutaka-subtitle"><?= get_bloginfo('description'); ?></p>
                 </div>
             </div>
         </div>

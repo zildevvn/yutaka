@@ -1,8 +1,8 @@
 <?php
 add_action('after_setup_theme', function () {
 	register_nav_menus([
-		'primary-menu' => esc_html__('Primary Menu', 'sazukaru'),
-		'footer-menu' => esc_html__('Footer Menu', 'sazukaru'),
+		'primary-menu' => esc_html__('Primary Menu', 'yutaka'),
+		'footer-menu' => esc_html__('Footer Menu', 'yutaka'),
 	]);
 });
 
@@ -42,8 +42,8 @@ function filter_bootstrap_nav_menu_css_class($classes, $item, $args)
  *
  * @return string
  */
-add_filter('nav_menu_item_title', 'filter_sazukaru_nav_menu_item_title', 10, 4);
-function filter_sazukaru_nav_menu_item_title($title, $item, $args, $depth)
+add_filter('nav_menu_item_title', 'filter_yutaka_nav_menu_item_title', 10, 4);
+function filter_yutaka_nav_menu_item_title($title, $item, $args, $depth)
 {
 	if ($args->theme_location === 'primary-menu') {
 		$icon = get_field('icon', $item);
@@ -64,8 +64,8 @@ function filter_sazukaru_nav_menu_item_title($title, $item, $args, $depth)
  *
  * @return array
  */
-add_filter('nav_menu_css_class', 'filter_sazukaru_nav_menu_css_class', 15, 3);
-function filter_sazukaru_nav_menu_css_class($classes, $item, $args)
+add_filter('nav_menu_css_class', 'filter_yutaka_nav_menu_css_class', 15, 3);
+function filter_yutaka_nav_menu_css_class($classes, $item, $args)
 {
 	if ($args->theme_location === 'primary-menu') {
 		$icon = get_field('icon', $item);

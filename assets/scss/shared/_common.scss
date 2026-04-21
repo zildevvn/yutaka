@@ -53,8 +53,8 @@ body {
 }
 
 h2 {
-    font-weight: 500;
-    font-size: 48px;
+    font-weight: 600;
+    font-size: 35px;
     letter-spacing: 0.06em;
     font-family: $font-second;
 
@@ -114,7 +114,7 @@ img {
 }
 
 
-.sazukaru-section {
+.yutaka-section {
     width: 100%;
     position: relative;
     z-index: 1;
@@ -138,6 +138,15 @@ img {
     >.container {
         position: relative;
         z-index: 2;
+    }
+
+    &__sub-heading {
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        line-height: 46.68px;
+        font-family: $font-fifth;
+        margin: 0;
     }
 }
 

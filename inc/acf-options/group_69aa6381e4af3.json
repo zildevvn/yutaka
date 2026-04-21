@@ -3,6 +3,27 @@
     "title": "Header Options",
     "fields": [
         {
+            "key": "field_69e79637b5666",
+            "label": "Phone",
+            "name": "phone_header",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_69aa6382a1f1e",
             "label": "CTA",
             "name": "cta_header",
@@ -12,7 +33,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -39,5 +60,7 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1772774314
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1776785027
 }

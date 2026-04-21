@@ -1,274 +1,102 @@
 .header-main {
-    padding: 15px 0;
-
-    @include media-breakpoint-down(lg) {
-        padding-bottom: 0;
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: auto;
-        background-color: #fff;
-        z-index: 99999;
-
-        body.logged-in & {
-            top: 46px;
-        }
-    }
-
-    @include media-breakpoint-down(md) {
-        padding-top: 0;
-    }
-
-    .container-full {
-        @include media-breakpoint-down(lg) {
-            padding-right: 0;
-        }
-    }
-
-    ul li:before {
-        content: none
-    }
-
-    .header-logo {
-        img {
-            width: 100%;
-            height: auto;
-            max-width: 80px;
-
-            @include media-breakpoint-down(md) {
-                max-width: 40px;
-            }
-        }
-    }
+    background: $color-primary;
+    padding-bottom: 12px;
+    padding-top: 8px;
 
     ul {
         padding: 0;
         margin: 0;
-        display: flex;
-        justify-content: end;
-        gap: 32px;
-
-        @media (max-width: 1599.98px) {
-            gap: 20px;
-        }
-
-        @media (max-width: 1199.98px) {
-            gap: 16px;
-        }
 
         li {
             list-style: none;
 
             a {
                 text-decoration: none;
-                display: flex;
-                justify-content: center;
-                flex-wrap: wrap;
-                height: 100%;
-                align-content: flex-end;
-                gap: 8px;
+                color: #fff;
+                font-family: $font-third;
+                font-size: 17px;
+                line-height: 39.45px;
+                letter-spacing: 0.1em;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
 
-                >span {
-                    width: 100%;
-                    display: inline-block;
-                    text-align: center;
+                @include media-breakpoint-down(xl) {
                     font-size: 14px;
-                    font-family: $font-primary;
-                    color: $color-text;
-                    font-weight: 500;
-                    letter-spacing: 0.06em;
-                    line-height: 1.2;
-
-                    @media (max-width: 1023.98px) {
-                        font-size: 12px;
-                    }
                 }
             }
         }
     }
 
-    .humberger-btn {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 52px;
-        height: 52px;
-        position: relative;
-        cursor: pointer;
-        padding: 0;
-        background-color: #00c7d0;
-        border: none;
-        outline: none;
-        z-index: 1000;
-        padding: 13px 10px;
-
-        span {
-            display: block;
+    .header-logo {
+        img {
             width: 100%;
-            height: 2.5px;
-            background-color: #fff;
-            border-radius: 5px;
-            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            transform-origin: left center;
+            height: auto;
+            max-width: 64px;
+        }
+    }
+
+    .header-menu {
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            gap: 20px;
+
+            li.current-menu-item a,
+            li a:hover {
+                color: $color-secondary;
+            }
+        }
+    }
+
+    .header-right {
+        gap: 15px;
+
+        .yutaka-button {
+            margin-left: 12px;
+        }
+    }
+
+    .header-phone {
+        gap: 5px;
+        color: #fff;
+        text-decoration: none;
+
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 28px;
+            flex-shrink: 0;
+            margin-bottom: 10px;
         }
 
-        &.is-active {
+        p {
+            font-family: $font-third;
+            font-size: 17px;
+            line-height: 39.45px;
+            letter-spacing: 0.1em;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            flex-shrink: 0;
+
+            @include media-breakpoint-down(xl) {
+                font-size: 14px;
+            }
+
             span {
-                &:nth-child(1) {
-                    transform: rotate(45deg) translate(2px, -2px);
+                font-family: $font-fourth;
+                font-size: 19.91px;
+                line-height: 21.54px;
+                letter-spacing: 0.1em;
+                font-weight: 500;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                width: 100%;
+
+                @include media-breakpoint-down(xl) {
+                    font-size: 16px;
                 }
-
-                &:nth-child(2) {
-                    opacity: 0;
-                    transform: translateX(10px);
-                }
-
-                &:nth-child(3) {
-                    transform: rotate(-45deg) translate(2px, 2px);
-                }
             }
-        }
-    }
-
-    &#header-scroll {
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 100%;
-        transition: all 0.5s ease-in-out;
-        transform: translateY(-100%);
-        z-index: 99999;
-        opacity: 0;
-        visibility: hidden;
-        padding: 10px 0;
-
-        @media (max-width: 1023.98px) {
-            display: none !important;
-        }
-
-        &.is-scrolled {
-            transform: translateY(0);
-            background: rgba(255, 255, 255, 0.8);
-            // backdrop-filter: blur(10px);
-            opacity: 1;
-            visibility: visible;
-            // box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-        }
-
-        body.logged-in & {
-            top: 32px;
-        }
-
-        .header-logo img {
-            max-width: 60px;
-        }
-
-        ul.primary-menu li img {
-            width: auto;
-            height: 100%;
-            max-height: 24px;
-        }
-    }
-}
-
-.mobile-menu-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #fff;
-    z-index: 2000;
-    transform: translateX(100%);
-    transition: transform 0.4s cubic-bezier(0.7, 0, 0.3, 1);
-    padding: 0 0 60px 0;
-    display: flex;
-    flex-direction: column;
-    z-index: 99999;
-
-    ul li:before {
-        content: none
-    }
-
-    body.logged-in & {
-        top: 46px;
-    }
-
-
-    &.is-active {
-        transform: translateX(0);
-    }
-
-    .mobile-menu-inner {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        padding: 0 0 0 15px;
-    }
-
-    .mobile-menu-header {
-        margin-bottom: 40px;
-
-        .header-logo img {
-            max-width: 80px;
-
-            @include media-breakpoint-down(md) {
-                max-width: 40px;
-            }
-        }
-    }
-
-    .mobile-primary-menu {
-        padding-right: 15px;
-    }
-
-    .menu-close-btn {
-        background-color: #00c7d0;
-        border: none;
-        width: 52px;
-        height: 52px;
-        position: relative;
-        cursor: pointer;
-        padding: 0;
-
-        span {
-            display: block;
-            width: 32px;
-            height: 2px;
-            background: #fff;
-            position: absolute;
-            top: 50%;
-            left: 9px;
-            border-radius: 5px;
-
-
-            &:nth-child(1) {
-                transform: rotate(45deg);
-            }
-
-            &:nth-child(2) {
-                transform: rotate(-45deg);
-            }
-        }
-    }
-
-    .mobile-menu-content {
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-        overflow-y: auto;
-    }
-
-    .mobile-nav {
-        // margin-bottom: 40px;
-    }
-
-    .mobile-contact-info {
-        margin: 10px 0 0 0 !important;
-
-        .main-footer-logo {
-            margin-top: 0;
         }
     }
 }

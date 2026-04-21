@@ -1,8 +1,8 @@
 <?php
 $page_id = get_the_ID();
-$count = count(get_field('sazukaru_page_content', $page_id));
-if (have_rows('sazukaru_page_content', $page_id)) {
-    while (have_rows('sazukaru_page_content', $page_id)) {
+$count = count(get_field('yutaka_page_content', $page_id));
+if (have_rows('yutaka_page_content', $page_id)) {
+    while (have_rows('yutaka_page_content', $page_id)) {
         $i = get_row_index() + 1;
         the_row();
         $layout_name = str_replace('_', '-', get_row_layout());

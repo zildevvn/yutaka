@@ -27,7 +27,7 @@ add_action('after_setup_theme', function () {
 add_filter('use_block_editor_for_post', '__return_false', 10);
 add_filter('use_block_editor_for_post_type', '__return_false', 10);
 
-function sazukaru_add_slug_to_body_class($classes)
+function yutaka_add_slug_to_body_class($classes)
 {
 	if (is_singular()) {
 		global $post;
@@ -35,5 +35,5 @@ function sazukaru_add_slug_to_body_class($classes)
 	}
 	return $classes;
 }
-add_filter('body_class', 'sazukaru_add_slug_to_body_class');
+add_filter('body_class', 'yutaka_add_slug_to_body_class');
 

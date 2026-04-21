@@ -33,8 +33,8 @@ add_filter('upload_mimes', function ($mime_types) {
  * Header template
  * @return void
  */
-add_action('sazukaru_hook_header', 'sazukaru_header_template');
-function sazukaru_header_template()
+add_action('yutaka_hook_header', 'yutaka_header_template');
+function yutaka_header_template()
 {
 	load_template(get_template_directory() . '/template-parts/header.php', false);
 }
@@ -43,8 +43,8 @@ function sazukaru_header_template()
  * Footer template
  * @return void
  */
-add_action('sazukaru_hook_footer', 'sazukaru_footer_template');
-function sazukaru_footer_template()
+add_action('yutaka_hook_footer', 'yutaka_footer_template');
+function yutaka_footer_template()
 {
 	load_template(get_template_directory() . '/template-parts/footer.php', false);
 }
@@ -53,8 +53,8 @@ function sazukaru_footer_template()
  * Search template
  * @return void
  */
-add_action('sazukaru_hook_search', 'sazukaru_search_template');
-function sazukaru_search_template()
+add_action('yutaka_hook_search', 'yutaka_search_template');
+function yutaka_search_template()
 {
 	load_template(get_template_directory() . '/template-parts/modal-search.php', false);
 }
@@ -67,13 +67,13 @@ function sazukaru_search_template()
  *
  * @return void
  */
-add_action('sazukaru_hook_post_loop_item', 'sazukaru_post_loop_item_template', 20, 2);
-function sazukaru_post_loop_item_template($post_id, $index)
+add_action('yutaka_hook_post_loop_item', 'yutaka_post_loop_item_template', 20, 2);
+function yutaka_post_loop_item_template($post_id, $index)
 {
 	set_query_var('post_id', $post_id);
 	?>
 	<article <?php post_class('col-md-4') ?>>
-		<?php sazukaru_post_item() ?>
+		<?php yutaka_post_item() ?>
 	</article>
 	<?php
 }

@@ -4,10 +4,12 @@ $logo_url = wp_get_attachment_url($custom_logo_id);
 $socials = get_field('socials', 'option');
 $company_name = get_field('company_name', 'option');
 $address = get_field('address', 'option');
+$phone = get_field('phone_header', 'option');
+$cta_header = get_field('cta_header', 'option');
 ?>
 
 <header id="site-header" class="header-main">
-    <div class="container-full">
+    <div class="container">
         <div class="header-inner d-flex gap-2 justify-content-between align-items-center">
             <div class="header-logo">
                 <a href="<?php echo home_url(); ?>" aria-label="<?php echo get_bloginfo('name'); ?>">
@@ -15,11 +17,33 @@ $address = get_field('address', 'option');
                 </a>
             </div>
 
-            <?php if (has_nav_menu('primary-menu')): ?>
-                <div class="header-menu d-none d-lg-block">
-                    <?php wp_nav_menu(array('theme_location' => 'primary-menu', 'menu_class' => 'primary-menu')) ?>
-                </div>
-            <?php endif; ?>
+            <div class="header-right d-flex align-items-center justify-content-end">
+                <?php if (has_nav_menu('primary-menu')): ?>
+                    <div class="header-menu d-none d-lg-block">
+                        <?php wp_nav_menu(array('theme_location' => 'primary-menu', 'menu_class' => 'primary-menu')) ?>
+                    </div>
+                <?php endif; ?>
+
+                <?php if ($phone): ?>
+                    <a href="tel:<?php echo $phone; ?>" class="header-phone d-flex align-items-end">
+                        <img src="<?= get_template_directory_uri() ?>/assets/images/icon-phone.png" alt="phone">
+
+                        <p class="mb-0 text-center">
+                            電話番号
+                            <span class="d-flex">
+                                <?php echo $phone; ?>
+                            </span>
+                        </p>
+
+                    </a>
+                <?php endif; ?>
+
+                <?php if (!empty($cta_header)): ?>
+                    <?php yutaka_get_button($cta_header['title'], $cta_header['url'], '_self', '') ?>
+                <?php endif; ?>
+            </div>
+
+
 
             <div class="header-humberger d-block d-lg-none">
                 <button class="humberger-btn">
@@ -32,7 +56,7 @@ $address = get_field('address', 'option');
     </div>
 </header>
 
-<header id="header-scroll" class="header-main">
+<header id="header-scroll" class="header-mai d-none">
     <div class="container-full">
         <div class="header-inner d-flex gap-2 justify-content-between align-items-center">
             <div class="header-logo">
