@@ -24,9 +24,9 @@
             "append": ""
         },
         {
-            "key": "field_69e795da80db8",
-            "label": "Address",
-            "name": "address_ft",
+            "key": "field_69e795ebd6096",
+            "label": "Copyright",
+            "name": "copyright_ft",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -45,25 +45,25 @@
             "append": ""
         },
         {
-            "key": "field_69e795ebd6096",
-            "label": "Copyright",
-            "name": "copyright_ft",
+            "key": "field_69e795da80db8",
+            "label": "Address",
+            "name": "address_ft",
             "aria-label": "",
-            "type": "text",
+            "type": "textarea",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "100",
                 "class": "",
                 "id": ""
             },
             "default_value": "",
             "maxlength": "",
             "allow_in_bindings": 0,
+            "rows": 3,
             "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "new_lines": ""
         }
     ],
     "location": [
@@ -87,5 +87,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1776784885
+    "modified": 1776870408
 }

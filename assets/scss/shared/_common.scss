@@ -173,19 +173,6 @@ ul {
     li {
         position: relative;
         list-style: none;
-
-        &:before {
-            content: " ";
-            display: inline-block;
-            width: 11.84px;
-            height: 11.84px;
-            background: $color-primary;
-            position: absolute;
-            left: -21px;
-            top: 50%;
-            transform: translateY(-50%);
-            border-radius: 50%;
-        }
     }
 }
 
