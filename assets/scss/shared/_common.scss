@@ -148,6 +148,66 @@ img {
         font-family: $font-fifth;
         margin: 0;
     }
+
+    &__label {
+        font-size: 24.38px;
+        line-height: 35.57px;
+        font-family: $font-fifth;
+        margin: 0;
+        letter-spacing: 0.06em;
+        font-weight: 500;
+        color: $color-blue;
+        text-align: center;
+
+        @include media-breakpoint-down(lg) {
+            font-size: 20px;
+        }
+
+        @include media-breakpoint-down(md) {
+            font-size: 16px;
+            line-height: 23.34px;
+            letter-spacing: 0.03em;
+        }
+    }
+
+    &__title {
+        font-family: $font-sixth;
+        font-size: 35.05px;
+        line-height: 46.75px;
+        letter-spacing: 0.06em;
+        font-weight: 600;
+        color: $color-heading;
+        text-align: center;
+        margin: 22px 0 0 0;
+
+        @include media-breakpoint-down(lg) {
+            font-size: 28px;
+            line-height: 37.34px;
+        }
+
+        @include media-breakpoint-down(md) {
+            font-size: 23px;
+            line-height: 61.34px;
+            letter-spacing: 0.03em;
+            margin-top: 12px;
+        }
+    }
+
+    &__line {
+        width: 100%;
+        max-width: 100px;
+        height: 3.81px;
+        background: $color-heading;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 36px;
+
+        @include media-breakpoint-down(md) {
+            height: 2.5px;
+            max-width: 65px;
+            margin-top: 23px;
+        }
+    }
 }
 
 .s-text-primary {
