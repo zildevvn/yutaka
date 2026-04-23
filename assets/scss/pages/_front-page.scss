@@ -1,4 +1,470 @@
 .home {
+    .news-section {
+        background: #fff;
+        padding: 60px 0;
+
+        .container {
+            max-width: 1012px;
+        }
+
+        .yutaka-section__label {
+            font-size: 20px;
+            line-height: 33.21px;
+            text-transform: uppercase;
+            color: $color-gray-light;
+
+            @include media-breakpoint-down(md) {
+                font-size: 16px;
+                line-height: 23.34px;
+            }
+
+        }
+
+        .yutaka-section__title {
+            color: $color-gray-light;
+            margin-top: 20px;
+
+            @include media-breakpoint-down(md) {
+                margin-top: 15px;
+            }
+        }
+
+        .yutaka-section__line {
+            background: $color-blue;
+            margin-top: 28px;
+
+            @include media-breakpoint-down(md) {
+                margin-top: 17px;
+            }
+        }
+
+        &__btn {
+            margin-top: 43px;
+
+            @include media-breakpoint-down(md) {
+                margin-top: 24px;
+            }
+
+            a {
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 23px;
+                background: $color-blue-light;
+                color: #fff;
+                font-size: 16px;
+                line-height: 28.87px;
+                font-weight: 400;
+                font-family: $font-third;
+                letter-spacing: 0.06em;
+                text-decoration: none;
+                height: 42px;
+                padding: 0 35px;
+
+                @include media-breakpoint-down(md) {
+                    width: 100%;
+                    font-size: 17px;
+                    line-height: 61.34px;
+                    letter-spacing: 0.03em;
+                }
+            }
+        }
+
+        &__list {
+            margin-top: 40px;
+
+            @include media-breakpoint-down(md) {
+                margin-top: 28px;
+            }
+        }
+
+        .news-item {
+            border-top: 1px solid #e8ebf0;
+            position: relative;
+
+            &:nth-child(even) {
+                background: #f0f0f0;
+
+                @include media-breakpoint-down(md) {
+                    background: #fff;
+                }
+            }
+
+            &:last-child {
+                border-bottom: 1px solid #e8ebf0;
+            }
+
+            &__link {
+                display: flex;
+                align-items: center;
+                gap: 0px;
+                padding: 22px 24px;
+                text-decoration: none;
+                color: $color-gray-light;
+                transition: opacity 0.2s ease;
+
+                @include media-breakpoint-down(md) {
+                    flex-wrap: wrap;
+                    padding: 18px 11px;
+                }
+            }
+
+            &__date {
+                font-size: 14px;
+                line-height: 35.78px;
+                font-weight: 400;
+                white-space: nowrap;
+                font-family: $font-third;
+                color: #595b5f;
+                flex-shrink: 0;
+                padding-right: 20px;
+                letter-spacing: 0.06em;
+
+                @include media-breakpoint-down(md) {
+                    font-size: 12px;
+                    line-height: 30.17px;
+                    letter-spacing: 0.03em;
+                    padding-right: 6px;
+
+                }
+            }
+
+            &__cat {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+                background: $color-blue-light-2;
+                color: #fff;
+                font-size: 14px;
+                font-weight: 300;
+                line-height: 35.78px;
+                font-family: $font-primary;
+                border-radius: 12.5px;
+                padding: 0px 20px;
+                height: 24.5px;
+                white-space: nowrap;
+                margin-right: 14px;
+                letter-spacing: 0.06em;
+
+                @include media-breakpoint-down(md) {
+                    height: 21px;
+                    font-size: 12px;
+                    line-height: 30.17px;
+                    letter-spacing: 0.03em;
+                    margin-right: 8px;
+                }
+            }
+
+            &__new {
+                flex-shrink: 0;
+                color: #d0021b;
+                font-size: 14px;
+                line-height: 35.78px;
+                font-weight: 300;
+                font-family: $font-seventh;
+                letter-spacing: 0.06em;
+                color: $color-red;
+                padding-right: 10px;
+
+                @include media-breakpoint-down(md) {
+                    font-size: 12px;
+                    line-height: 30.17px;
+                    letter-spacing: 0.03em;
+                    padding-right: 0;
+                }
+            }
+
+            &__title {
+                flex: 1;
+                font-size: 15.17px;
+                font-weight: 300;
+                font-family: $font-seventh;
+                color: $color-gray-light-2;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+
+                @include media-breakpoint-down(md) {
+                    width: 100%;
+                    flex: auto;
+                    font-size: 13px;
+                    line-height: 30px;
+                    margin-top: 10px;
+                }
+
+                // @include media-breakpoint-down(md) {
+                //     font-size: 14px;
+                //     width: 100%;
+                //     flex-basis: 100%;
+                //     order: 4;
+                // }
+            }
+
+            &__arrow {
+                flex-shrink: 0;
+                font-size: 20px;
+                color: $color-gray-light;
+                line-height: 1;
+
+                @include media-breakpoint-down(md) {
+                    position: absolute;
+                    right: 0;
+                }
+            }
+        }
+    }
+
+    .buyer-section {
+        background: #edf0f3;
+        padding: 70px 0 55px 0;
+
+        @include media-breakpoint-down(lg) {
+            padding: 50px 0 43px 0;
+        }
+
+        @include media-breakpoint-down(md) {
+            padding: 39px 0 43px 0;
+        }
+
+        .yutaka-section__label {
+            font-size: 20px;
+            line-height: 33.21px;
+            text-transform: uppercase;
+            color: $color-blue-light;
+
+            @include media-breakpoint-down(md) {
+                font-size: 16px;
+                line-height: 23.34px;
+            }
+
+        }
+
+        .yutaka-section__title {
+            color: $color-gray-light;
+            margin-top: 20px;
+
+            @include media-breakpoint-down(md) {
+                margin-top: 15px;
+            }
+        }
+
+        .yutaka-section__line {
+            background: $color-blue;
+            margin-top: 28px;
+
+            @include media-breakpoint-down(md) {
+                margin-top: 21px;
+            }
+        }
+
+        &__content {
+            margin-top: 50px;
+
+            @include media-breakpoint-down(md) {
+                margin-top: 32px;
+            }
+
+            img {
+                @media (max-width: 480.98px) {
+                    margin-right: -15px;
+                }
+            }
+        }
+    }
+
+    .about-section {
+        padding: 60px 0 90px 0;
+
+        @include media-breakpoint-down(md) {
+            padding: 37px 0 105px 0;
+        }
+
+        .container {
+            text-align: center;
+            color: #fff;
+            max-width: 1125px;
+        }
+
+        &__sub-heading {
+            font-size: 26.14px;
+            line-height: 38.14px;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            margin: 0;
+            font-family: $font-fifth;
+            text-transform: uppercase;
+
+            @include media-breakpoint-down(lg) {
+                font-size: 20px;
+                line-height: 29.14px;
+            }
+
+            @include media-breakpoint-down(md) {
+                font-size: 16px;
+                line-height: 23.34px;
+                letter-spacing: 0.03em;
+            }
+        }
+
+        &__heading {
+            display: inline-flex;
+            align-items: center;
+            font-size: 37.58px;
+            line-height: 50.12px;
+            letter-spacing: 0.06em;
+            font-family: $font-sixth;
+            font-weight: 600;
+            color: $color-blue-light;
+            text-align: center;
+            background: #fff;
+            margin: 22px 0 0 0;
+            height: 81px;
+            padding: 0 24px;
+
+            @include media-breakpoint-down(lg) {
+                height: 60px;
+                font-size: 28px;
+                line-height: 37.34px;
+                padding: 0 18px;
+            }
+
+            @include media-breakpoint-down(md) {
+                height: 50px;
+                font-size: 23px;
+                line-height: 30.66px;
+                letter-spacing: 0.03em;
+                padding: 0 13.5px;
+                margin-top: 16px;
+            }
+        }
+
+        .yutaka-section__line {
+            background: #fff;
+            margin-top: 24px;
+
+            @include media-breakpoint-down(md) {
+                margin-top: 16px;
+            }
+        }
+
+        &__content {
+            margin-top: 70px;
+
+            @include media-breakpoint-down(lg) {
+                margin-top: 55px;
+            }
+
+            @include media-breakpoint-down(md) {
+                margin-top: 45px;
+            }
+
+            .item {
+                &:first-child {
+                    p {
+                        margin: 0;
+
+                        @include media-breakpoint-down(md) {
+                            br {
+                                display: none;
+                            }
+                        }
+
+                        &:not(:last-child) {
+                            @include media-breakpoint-down(md) {
+                                margin-bottom: 28px;
+                            }
+                        }
+
+                        &:first-child,
+                        &:nth-child(3) {
+                            @include media-breakpoint-down(md) {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+
+
+                }
+
+                &:not(:last-child) {
+                    margin-bottom: 32px;
+
+                    @include media-breakpoint-down(md) {
+                        margin-bottom: 28px;
+                    }
+                }
+
+                &:nth-child(2) {
+                    p {
+                        margin: 0;
+
+                        &:not(:last-child) {
+                            margin-bottom: 32px;
+
+                            @include media-breakpoint-down(md) {
+                                margin-bottom: 28px;
+                            }
+                        }
+
+                        &:first-child,
+                        &:nth-child(2),
+                        &:nth-child(4),
+                        &:nth-child(5) {
+                            margin-left: auto;
+                            margin-right: auto;
+                        }
+
+                        &:first-child {
+
+                            max-width: 950px;
+                        }
+
+                        &:nth-child(2) {
+                            max-width: 570px;
+                        }
+
+                        // &:nth-child(4) {
+                        //     max-width: 750px;
+                        // }
+                    }
+                }
+
+                p {
+                    font-size: 20px;
+                    line-height: 28.9px;
+                    letter-spacing: 0.01em;
+                    color: #fff;
+                    font-weight: 300;
+                    font-family: $font-third;
+
+                    @include media-breakpoint-down(md) {
+                        font-size: 18px;
+                        line-height: 25.3px;
+                        letter-spacing: 0.005em;
+                        text-align: left;
+                    }
+
+                    >b {
+                        font-weight: 600;
+                    }
+
+
+                    // @include media-breakpoint-down(lg) {
+                    //     font-size: 18px;
+                    //     line-height: 28.8px;
+                    // }
+
+                    // @include media-breakpoint-down(md) {
+                    //     font-size: 14px;
+                    //     line-height: 23.6px;
+                    //     letter-spacing: 0.005em;
+                    // }
+                }
+            }
+        }
+    }
+
     .yutaka-recommend-section {
         background: #f2f2f2;
         padding: 50px 0 80px 0;
@@ -15,6 +481,17 @@
             background: #fff;
             border: 1px solid $color-heading;
             padding: 46px 40px;
+            margin-top: 55px;
+
+            @include media-breakpoint-down(lg) {
+                margin-top: 48px;
+                padding: 32px 24px;
+            }
+
+            @include media-breakpoint-down(md) {
+                margin-top: 30px;
+                padding: 32px 32px 32px 15px;
+            }
 
             .recommend-item {
                 gap: 32px;
@@ -25,6 +502,14 @@
 
                 @include media-breakpoint-down(md) {
                     gap: 12px
+                }
+
+                &:not(:last-child) {
+                    margin-bottom: 32px;
+
+                    @include media-breakpoint-down(md) {
+                        margin-bottom: 28px;
+                    }
                 }
 
                 img {
