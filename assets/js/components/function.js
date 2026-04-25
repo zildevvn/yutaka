@@ -1,5 +1,12 @@
 
 
+import Swiper from 'swiper';
+import { Pagination, Navigation, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+
 (function ($) {
     "use strict";
 
@@ -157,8 +164,41 @@
         });
     }
 
+    function initBuyerCarousel() {
+        if ($('.buyer-listing-section__carousel').length > 0) {
+            const isMobile = window.innerWidth < 768;
+            new Swiper('.buyer-listing-section__carousel', {
+                modules: [Pagination, Navigation, Autoplay],
+                slidesPerView: 1.2,
+                spaceBetween: 16,
+                loop: true,
+                autoplay: false,
+                pagination: {
+                    el: '.swiper-pagination',
+                    type: isMobile ? 'bullets' : 'progressbar',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    768: {
+                        slidesPerView: 2.2,
+                        spaceBetween: 24,
+                    },
+                    1024: {
+                        slidesPerView: 4.6,
+                        spaceBetween: 30,
+                    },
+                },
+            });
+        }
+    }
+
     $(document).ready(function () {
         initHeaderScroll();
+        initBuyerCarousel();
         // initMarquee();
         // initFaqAccordion();
         // initIframeResize();
