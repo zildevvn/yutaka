@@ -1,3 +1,6 @@
+/*!**********************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/swiper/swiper.css ***!
+  \**********************************************************************************/
 /**
  * Swiper 11.2.10
  * Most modern mobile touch slider and framework with hardware accelerated transitions
@@ -227,6 +230,9 @@
 }
 /* Slide styles end */
 
+/*!**********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/swiper/modules/pagination.css ***!
+  \**********************************************************************************************/
 :root {
   /*
   --swiper-pagination-color: var(--swiper-theme-color);
@@ -412,6 +418,9 @@ button.swiper-pagination-bullet {
   display: none;
 }
 
+/*!**********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/swiper/modules/navigation.css ***!
+  \**********************************************************************************************/
 :root {
   --swiper-navigation-size: 44px;
   /*
@@ -498,4 +507,24 @@ button.swiper-pagination-bullet {
   content: 'next';
 }
 /* Navigation font end */
+
+/*!***********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/swiper/modules/effect-fade.css ***!
+  \***********************************************************************************************/
+.swiper-fade.swiper-free-mode .swiper-slide {
+  transition-timing-function: ease-out;
+}
+.swiper-fade .swiper-slide {
+  pointer-events: none;
+  transition-property: opacity;
+}
+.swiper-fade .swiper-slide .swiper-slide {
+  pointer-events: none;
+}
+.swiper-fade .swiper-slide-active {
+  pointer-events: auto;
+}
+.swiper-fade .swiper-slide-active .swiper-slide-active {
+  pointer-events: auto;
+}
 
