@@ -1,163 +1,179 @@
 .wpcf7-form {
-    background: #fff3f2;
-    padding: 60px 30px 42px 60px;
+    .item-group {
+        display: flex;
+        gap: 30px;
+        border-bottom: 1.5px solid #e1e1e1;
 
-    @media (max-width: 767.98px) {
-        padding: 13px 12px 36px 12px;
-    }
-
-    .form-group {
-        padding-top: 22px;
-        padding-bottom: 30px;
-        border-bottom: 1px solid #c5c5c5;
-
-        @media (max-width: 767.98px) {
-            padding-top: 17px;
-            padding-bottom: 20px;
+        @include media-breakpoint-down(md) {
+            flex-wrap: wrap;
+            gap: 5px;
+            border: none !important;
+            margin-bottom: 25px;
         }
 
-        >p {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin: 0;
-            gap: 50px;
-
-            @media (max-width: 767.98px) {
-                flex-wrap: wrap;
-                gap: 15px;
-            }
-
-            >br {
-                display: none;
-            }
+        &.first {
+            border-top: 1.5px solid #e1e1e1;
         }
 
-        input,
-        textarea {
-            border: 1.5px solid $color-primary;
-            width: 80%;
+        &__left {
+            background: #f7f7f7;
+            width: 30%;
+            flex-shrink: 0;
+            padding: 26px 26px 26px 32px;
 
-            @media (max-width: 767.98px) {
+            @include media-breakpoint-down(md) {
+                background: transparent;
+                padding: 0;
                 width: 100%;
             }
-        }
 
-        input {
-            height: 37.42px;
 
-            @media (max-width: 767.98px) {
-                height: 28px;
+            p {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin: 0;
+
+                @include media-breakpoint-down(md) {
+                    flex-wrap: wrap;
+                    justify-content: start;
+                    gap: 10px;
+                }
+
+                br {
+                    display: none;
+                }
             }
-        }
 
-        textarea {
-            height: 223.05px;
+            label {
+                font-size: 16px;
+                font-weight: 600;
+                color: $color-gray-light;
+                line-height: 30px;
+                letter-spacing: 0.01em;
+                color: #424648;
 
-            @media (max-width: 767.98px) {
-                height: 28px;
-            }
-        }
-
-        label {
-            font-size: 18.72px;
-            font-weight: 500;
-            color: $color-text;
-            width: 196px;
-            flex-shrink: 0;
-            text-align: left;
-
-            @media (max-width: 767.98px) {
-                font-size: 14px;
-                width: auto;
+                @include media-breakpoint-down(md) {
+                    font-size: 15px;
+                    letter-spacing: 0.005em;
+                }
             }
 
             span {
-                background: $color-primary;
+                font-size: 14px;
+                line-height: 30.54px;
                 color: #fff;
-                padding: 0px 5px;
-                display: inline-block;
-                margin-left: 3px;
+                letter-spacing: 0.01em;
+                height: 20px;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                background: #c9143d;
+                width: 51px;
+
+                @include media-breakpoint-down(md) {
+                    width: auto;
+                    background: transparent;
+                    color: #c9143d;
+                    letter-spacing: 0.005em;
+                }
             }
         }
 
-        .wpcf7-form-control-wrap {
-            flex-shrink: 1;
+        &__right {
+            display: flex;
+            align-items: center;
             width: 100%;
-            text-align: left;
-        }
+            flex-shrink: 1;
+            padding-top: 16px;
+            padding-bottom: 14px;
 
-        &.name {
-            padding-top: 0;
+            @include media-breakpoint-down(md) {
+                padding: 0
+            }
+
+            p {
+                margin: 0;
+                width: 100%;
+            }
+
+            input,
+            textarea {
+                border-radius: 5px;
+                border: 1.5px solid #dfdfdf;
+                background: #ffdfe0;
+                width: 100%;
+
+                @include media-breakpoint-down(md) {
+                    border-width: 1px;
+                }
+            }
+
+            textarea::placeholder,
+            input::placeholder,
+            input,
+            textarea {
+                font-size: 16px;
+                line-height: 30.54px;
+                letter-spacing: 0.01em;
+                color: #989ba0;
+            }
+
+            textarea {
+                height: 138px;
+                padding: 14px;
+
+                @include media-breakpoint-down(md) {
+                    height: 136px;
+                }
+            }
 
             input {
-                width: 70%;
+                height: 44px;
+                padding: 0 16px;
+                max-width: 80%;
 
-                @media (max-width: 767.98px) {
-                    width: 100%;
+                @include media-breakpoint-down(md) {
+                    max-width: 100%;
+                    height: 40px;
                 }
             }
         }
+    }
 
-        &.message,
-        &.submit {
-            border: none;
+
+    .item-submit {
+        margin-top: 64px;
+
+        @include media-breakpoint-down(md) {
+            margin-top: 14px;
         }
 
-        &.submit {
-            position: relative;
-            padding-left: 240px;
-            padding-bottom: 0;
-
-            @media (max-width: 767.98px) {
-                padding-left: 0;
-
-                .wpcf7-spinner {
-                    display: none;
-                }
-
-                >p {
-                    justify-content: center;
-                }
-            }
-
-
-
-            &::before {
-                content: '';
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                left: 475px;
-                z-index: 9999;
-                width: 30px;
-                height: 9px;
-                background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAJCAYAAAAl45yBAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAfklEQVQ4jb2TQQrDMAwEx01+1n+UtCH0Sek57+gb+qI6W5boEEJ6lBf2YCwYrywVSSSoA17AB5hPKwxO8KJNq6TnWc0lIy7wBipQIvHUKrE9SPruko/7+0ywfZdUA17j3ARsPyKxogNDK7A9HeC33t+cNGD/5FW7Fj+hMdjqfy0t30JS0lVrAAAAAElFTkSuQmCC);
-                background-size: contain;
-                background-repeat: no-repeat;
-                background-position: center;
-
-                @media (max-width: 767.98px) {
-                    left: calc(50% + 100px);
-                    transform: translateX(-50%);
-                }
-            }
+        p {
+            margin: 0;
+            display: flex;
+            justify-content: center;
 
             [type=submit] {
-                max-width: fit-content;
-                background: $color-primary;
-                color: #fff;
-                font-size: 18px;
-                line-height: 23.65px;
-                padding: 0 100px;
-                display: flex;
+                border-radius: 26.81px;
+                background: #002872;
+                height: 53.63px;
+                display: inline-flex;
+                justify-content: center;
                 align-items: center;
-                height: 60px;
-                position: relative;
+                font-size: 19.25px;
+                line-height: 30.54px;
+                font-weight: 600;
+                color: #fff;
+                letter-spacing: 0.01em;
+                width: 100%;
+                max-width: 446.89px;
 
-                @media (max-width: 767.98px) {
-                    height: 40px;
-                    font-size: 14px;
+                @include media-breakpoint-down(md) {
+                    width: 100%;
+                    height: 42px;
+                    font-size: 15px;
+                    letter-spacing: 0.05em;
                 }
             }
         }

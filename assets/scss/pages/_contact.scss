@@ -1,0 +1,14 @@
+.page-template-contact-template {
+    .content-section {
+        padding: 76px 0;
+
+        @include media-breakpoint-down(md) {
+            padding: 45px 0 60px 0;
+        }
+
+        .content-section__form {
+            max-width: 926px;
+        }
+    }
+
+}
