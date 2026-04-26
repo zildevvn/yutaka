@@ -67,38 +67,46 @@ function yutaka_post_item()
     </div>
 <?php }
 
-function yutaka_hero_section($title = '', $sub_title = '', $image = '', $image_mb = '')
+function yutaka_breadcrumbs($title)
+{
+    ?>
+    <p class="yutaka-breadcrumbs d-flex align-items-center">
+        <a href="<?= home_url() ?>">ホーム</a>
+        <span>＞</span>
+        <?= $title ?>
+    </p>
+<?php }
+
+function yutaka_hero_section_shared($title = '', $sub_title = '', $image = '', $image_mb = '')
 { ?>
-    <section class="yutaka-section hero-section">
+    <section class="yutaka-section hero-section-shared">
         <div class="yutaka-section__bg">
             <img class="d-none d-md-block" src="<?= $image ?>" alt="bg-hero" />
             <img class="d-md-none" src="<?= $image_mb ?>" alt="bg-hero-mb" />
         </div>
 
         <div class="container">
-            <h1 class="yutaka-hero-section__title mb-0">
-                <?= $title ?>
-            </h1>
-            <p class="yutaka-hero-section__sub-title mb-0">
-                <?= $sub_title ?>
-            </p>
+            <div class="hero-section-shared__box">
+                <div class="hero-section-shared__top">
+                    <?php yutaka_breadcrumbs($title) ?>
+                </div>
+
+                <div class="hero-section-shared__bottom">
+                    <h1 class="hero-section-shared__title mb-0">
+                        <?= $title ?>
+                    </h1>
+                    <p class="hero-section-shared__sub-title mb-0">
+                        <?= $sub_title ?>
+                    </p>
+                </div>
+
+            </div>
+
         </div>
     </section>
 <?php }
 
-function yutaka_breadcrumbs($title)
-{
-    ?>
-    <section class="breadcrumbs-section">
-        <div class="container">
-            <p class="mb-0">
-                <a href="<?= home_url() ?>">ホーム</a>
-                <span>></span>
-                <?= $title ?>
-            </p>
-        </div>
-    </section>
-<?php }
+
 
 function yutaka_breadcrumbs_news($title)
 {

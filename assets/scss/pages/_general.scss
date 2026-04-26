@@ -1,3 +1,81 @@
+.yutaka-breadcrumbs {
+    color: #Fff;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0.01em;
+    margin: 0;
+    gap: 3px;
+    font-weight: 500;
+
+    @include media-breakpoint-down(md) {
+        font-size: 12px;
+        letter-spacing: 0.005em;
+    }
+
+    >* {
+        color: inherit;
+        font-size: inherit;
+        font-family: inherit;
+        line-height: inherit;
+    }
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.hero-section-shared {
+    padding-top: 12px;
+    padding-bottom: 100px;
+
+    @include media-breakpoint-down(md) {
+        padding-bottom: 83px;
+        padding-top: 10px;
+    }
+
+
+    &__top {
+        margin-bottom: 290px;
+
+        @include media-breakpoint-down(xl) {
+            margin-bottom: 165px;
+        }
+
+        @include media-breakpoint-down(lg) {
+            margin-bottom: 130px;
+        }
+
+        @include media-breakpoint-down(md) {
+            margin-bottom: 42px;
+        }
+    }
+
+    &__title {
+        margin: 0;
+    }
+
+    &__title,
+    &__sub-title {
+        color: #fff;
+    }
+
+    &__sub-title {
+        font-size: 19.72px;
+        line-height: 100%;
+        margin: 22px 0 0 0;
+        letter-spacing: 0.01em;
+
+        @include media-breakpoint-down(lg) {
+            font-size: 16px;
+        }
+
+        @include media-breakpoint-down(md) {
+            font-size: 14px;
+            margin-top: 10px;
+        }
+    }
+}
+
 .contact-section {
     color: #fff;
     padding-bottom: 110px;
