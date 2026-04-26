@@ -68,7 +68,7 @@
             gap: 43px 60px;
 
             @include media-breakpoint-down(md) {
-                gap: 38px;
+                gap: 22px;
                 flex-direction: column;
                 align-items: center;
                 margin-top: 37px;
@@ -93,8 +93,9 @@
             @include media-breakpoint-down(md) {
                 width: 100%;
                 max-width: 100%;
-                margin-bottom: 20px;
-                flex-wrap: nowrap;
+                margin-bottom: 0px;
+                flex-direction: row;
+                align-items: stretch;
             }
 
             &::before {
@@ -110,14 +111,16 @@
                 background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAPCAYAAAA2yOUNAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAoUlEQVQokYWQvQlCUQxGj+ICDqFkBAdQsLK1cgCxyyC38QcHcAYFBWvdIOAO4gCCkuLK5XFfPGU4JN8XEN0g2iOgC6yAI6L9SHImwA3RAYHkDIE7omMCyfGTJ0SXBJLjJXaIbnOhDqIf2rkA89qmEi90+CddgUUk7YEplp61T78BxdI6D5rSy4Ni6VwOS+kBzLBkzdU5kwcc1YQs/QK2VfgCimQkBSDrhEoAAAAASUVORK5CYII=);
 
                 @include media-breakpoint-up(md) {
-                    right: calc(-1 * ((55px / 2) + 6px));
+                    right: calc(-1 * ((60px / 2) + 4.5px));
                     top: 50%;
                 }
 
                 @include media-breakpoint-down(md) {
                     left: 50%;
                     transform: translateX(-50%) rotate(90deg);
-                    bottom: -52px;
+                    bottom: -18px;
+                    width: 6px;
+                    height: 12px;
                 }
 
             }
@@ -125,7 +128,7 @@
             &:nth-child(3),
             &:nth-child(6) {
                 &::before {
-                    @media (min-width: 1024px) {
+                    @include media-breakpoint-up(lg) {
                         content: none;
                     }
                 }
@@ -158,11 +161,12 @@
                 font-family: $font-third;
 
                 @include media-breakpoint-down(md) {
-                    width: 40px;
-                    height: 40px;
-                    border: 1px solid #fff;
-                    font-size: 28px;
-                    line-height: 46px;
+                    width: 32px;
+                    height: 32px;
+                    font-size: 14px;
+                    line-height: 1;
+                    top: -10px;
+                    left: -10px;
                 }
             }
 
@@ -174,8 +178,9 @@
                 flex-shrink: 0;
 
                 @include media-breakpoint-down(md) {
+                    width: 95px;
                     height: auto;
-                    width: 97px;
+                    min-height: 100%;
                 }
 
                 img {
@@ -195,20 +200,27 @@
                 align-items: center;
                 justify-content: start;
                 padding: 20px;
+                background: rgba(0, 0, 0, 0.4);
+
+                @include media-breakpoint-down(md) {
+                    padding: 10px;
+                    justify-content: center;
+                }
             }
 
             &__title {
                 color: #fff;
                 font-size: 18px;
-                line-height: 30.63px;
+                line-height: 1.7;
                 letter-spacing: 0;
                 font-weight: 300;
                 text-align: left;
                 margin: 0;
 
                 @include media-breakpoint-down(md) {
-                    font-size: 17px;
-                    line-height: 23.5px;
+                    font-size: 13px;
+                    text-align: center;
+                    line-height: 20px;
                 }
             }
 
@@ -217,22 +229,23 @@
                 flex-grow: 1;
 
                 @include media-breakpoint-down(md) {
-                    padding: 17px 10px;
+                    padding: 19px 9px;
+                    display: flex;
+                    align-items: center;
                 }
 
                 p {
                     font-size: 14px;
-                    line-height: 22.4px;
+                    line-height: 1.6;
                     margin: 0;
                     color: $color-gray-light;
                     font-weight: 300;
                     letter-spacing: 0;
 
-                    // @include media-breakpoint-down(md) {
-                    //     font-size: 14px;
-                    //     line-height: 23.6px;
-                    //     letter-spacing: 0.05em;
-                    // }
+                    @include media-breakpoint-down(md) {
+                        font-size: 13px;
+                        line-height: 20.3px;
+                    }
 
                     b {
                         font-weight: 600;

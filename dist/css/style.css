@@ -9734,7 +9734,7 @@ body.logged-in .mobile-menu-overlay {
 }
 @media (max-width: 767.98px) {
   .page-template-sell-a-business-template .flow-section__list {
-    gap: 38px;
+    gap: 22px;
     flex-direction: column;
     align-items: center;
     margin-top: 37px;
@@ -9758,8 +9758,9 @@ body.logged-in .mobile-menu-overlay {
   .page-template-sell-a-business-template .flow-section .flow-item {
     width: 100%;
     max-width: 100%;
-    margin-bottom: 20px;
-    flex-wrap: nowrap;
+    margin-bottom: 0px;
+    flex-direction: row;
+    align-items: stretch;
   }
 }
 .page-template-sell-a-business-template .flow-section .flow-item::before {
@@ -9776,7 +9777,7 @@ body.logged-in .mobile-menu-overlay {
 }
 @media (min-width: 768px) {
   .page-template-sell-a-business-template .flow-section .flow-item::before {
-    right: -33.5px;
+    right: -34.5px;
     top: 50%;
   }
 }
@@ -9784,7 +9785,9 @@ body.logged-in .mobile-menu-overlay {
   .page-template-sell-a-business-template .flow-section .flow-item::before {
     left: 50%;
     transform: translateX(-50%) rotate(90deg);
-    bottom: -52px;
+    bottom: -18px;
+    width: 6px;
+    height: 12px;
   }
 }
 @media (min-width: 1024px) {
@@ -9817,11 +9820,12 @@ body.logged-in .mobile-menu-overlay {
 }
 @media (max-width: 767.98px) {
   .page-template-sell-a-business-template .flow-section .flow-item__number {
-    width: 40px;
-    height: 40px;
-    border: 1px solid #fff;
-    font-size: 28px;
-    line-height: 46px;
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+    line-height: 1;
+    top: -10px;
+    left: -10px;
   }
 }
 .page-template-sell-a-business-template .flow-section .flow-item__image {
@@ -9833,8 +9837,9 @@ body.logged-in .mobile-menu-overlay {
 }
 @media (max-width: 767.98px) {
   .page-template-sell-a-business-template .flow-section .flow-item__image {
+    width: 95px;
     height: auto;
-    width: 97px;
+    min-height: 100%;
   }
 }
 .page-template-sell-a-business-template .flow-section .flow-item__image img {
@@ -9852,11 +9857,18 @@ body.logged-in .mobile-menu-overlay {
   align-items: center;
   justify-content: start;
   padding: 20px;
+  background: rgba(0, 0, 0, 0.4);
+}
+@media (max-width: 767.98px) {
+  .page-template-sell-a-business-template .flow-section .flow-item__overlay {
+    padding: 10px;
+    justify-content: center;
+  }
 }
 .page-template-sell-a-business-template .flow-section .flow-item__title {
   color: #fff;
   font-size: 18px;
-  line-height: 30.63px;
+  line-height: 1.7;
   letter-spacing: 0;
   font-weight: 300;
   text-align: left;
@@ -9864,8 +9876,9 @@ body.logged-in .mobile-menu-overlay {
 }
 @media (max-width: 767.98px) {
   .page-template-sell-a-business-template .flow-section .flow-item__title {
-    font-size: 17px;
-    line-height: 23.5px;
+    font-size: 13px;
+    text-align: center;
+    line-height: 20px;
   }
 }
 .page-template-sell-a-business-template .flow-section .flow-item__content {
@@ -9874,16 +9887,24 @@ body.logged-in .mobile-menu-overlay {
 }
 @media (max-width: 767.98px) {
   .page-template-sell-a-business-template .flow-section .flow-item__content {
-    padding: 17px 10px;
+    padding: 19px 9px;
+    display: flex;
+    align-items: center;
   }
 }
 .page-template-sell-a-business-template .flow-section .flow-item__content p {
   font-size: 14px;
-  line-height: 22.4px;
+  line-height: 1.6;
   margin: 0;
   color: #293337;
   font-weight: 300;
   letter-spacing: 0;
+}
+@media (max-width: 767.98px) {
+  .page-template-sell-a-business-template .flow-section .flow-item__content p {
+    font-size: 13px;
+    line-height: 20.3px;
+  }
 }
 .page-template-sell-a-business-template .flow-section .flow-item__content p b {
   font-weight: 600;
