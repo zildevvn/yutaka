@@ -1,0 +1,390 @@
+.page-template-corporate-transfer-template {
+    .about-section {
+        background: #fff;
+        padding: 46px 0 100px 0;
+
+        @include media-breakpoint-down(md) {
+            padding: 26px 0 35px 0;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 25.6px;
+            font-weight: 300;
+            color: #000;
+
+            @include media-breakpoint-down(md) {
+                font-size: 14px;
+                line-height: 26px;
+            }
+
+            b {
+                font-weight: 600;
+            }
+        }
+
+        .btn {
+            border-radius: 10px;
+            background: $color-blue;
+            font-size: 20.01px;
+            line-height: 32.97px;
+            color: #fff;
+            font-weight: 600;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            height: 82px;
+            text-decoration: none;
+            padding: 0 113px;
+            margin-top: 24px;
+
+            @include media-breakpoint-down(md) {
+                height: 70px;
+                width: 100%;
+                padding: 0 20px;
+                font-size: 17px;
+                line-height: 29px;
+                margin-top: 10px;
+            }
+        }
+    }
+
+
+    .business-section {
+        background: #f2f2f2;
+        padding: 60px 0 80px 0;
+
+
+        @include media-breakpoint-down(md) {
+            padding: 35px 0 28px 0;
+        }
+
+        h2 {
+            color: $color-gray-light;
+        }
+
+        &__content {
+            margin-top: 50px;
+
+
+            @include media-breakpoint-down(md) {
+                margin-top: 32px;
+            }
+        }
+
+        p,
+        ul li {
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 29.37px;
+            color: #000;
+
+            @include media-breakpoint-down(md) {
+                font-size: 14px;
+                line-height: 28px;
+                letter-spacing: 0;
+            }
+
+            b {
+                font-weight: 600;
+
+            }
+        }
+
+        p,
+        ul {
+            margin-bottom: 30px;
+        }
+    }
+
+
+    .consultation-section {
+        padding: 70px 0 122px 0;
+
+
+        @include media-breakpoint-down(md) {
+            padding: 26px 0;
+        }
+
+        h2 {
+            color: $color-gray-light;
+        }
+
+        &__content {
+            margin-top: 50px;
+
+
+            @include media-breakpoint-down(md) {
+                margin-top: 35px;
+            }
+        }
+
+        p,
+        ul li {
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 29.37px;
+            color: #000;
+
+            @include media-breakpoint-down(md) {
+                font-size: 14px;
+                line-height: 28px;
+                letter-spacing: 0;
+            }
+
+            b {
+                font-weight: 600;
+
+            }
+        }
+
+        p,
+        ul {
+            margin-bottom: 30px;
+        }
+    }
+
+
+    .popular-section {
+        padding: 26px 0 70px 0;
+        background: #f3f6ff;
+
+
+        @include media-breakpoint-down(md) {
+            padding: 34px 0;
+        }
+
+        h2 {
+            color: #000;
+        }
+
+        &__content {
+            margin-top: 70px;
+
+
+            @include media-breakpoint-down(md) {
+                margin-top: 40px;
+            }
+        }
+
+        p,
+        ul li {
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 29.37px;
+            color: #000;
+
+            @include media-breakpoint-down(md) {
+                font-size: 14px;
+                line-height: 28px;
+                letter-spacing: 0;
+            }
+
+            b {
+                font-weight: 600;
+
+            }
+        }
+
+        p,
+        ul {
+            margin-bottom: 30px;
+        }
+    }
+
+    .flow-section {
+        background: #fff;
+        padding: 60px 0;
+    }
+
+    .transfer-section {
+        padding: 26px 0 70px 0;
+        background: #f2f2f2;
+
+
+        @include media-breakpoint-down(md) {
+            padding: 34px 0;
+        }
+
+        h2 {
+            color: #000;
+        }
+
+        &__content {
+            margin-top: 70px;
+
+
+            @include media-breakpoint-down(md) {
+                margin-top: 40px;
+            }
+        }
+
+        p,
+        ul li {
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 29.37px;
+            color: #000;
+
+            @include media-breakpoint-down(md) {
+                font-size: 14px;
+                line-height: 28px;
+                letter-spacing: 0;
+            }
+
+            b {
+                font-weight: 600;
+
+            }
+        }
+
+        p,
+        ul {
+            margin-bottom: 30px;
+        }
+    }
+
+
+    .valuation-section {
+        padding: 64px 0 100px 0;
+        background: #ffff;
+
+        @include media-breakpoint-down(md) {
+            padding: 40px 0 42px 0;
+        }
+
+        h2 {
+            color: #000;
+        }
+
+        &__content {
+            width: 100%;
+            max-width: 930px;
+            margin-top: 60px;
+
+            @include media-breakpoint-down(md) {
+                margin-top: 40px;
+            }
+        }
+
+        p,
+        ul li {
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 29.37px;
+            color: #000;
+
+            @include media-breakpoint-down(md) {
+                font-size: 14px;
+                line-height: 28px;
+                letter-spacing: 0;
+            }
+
+            b {
+                font-weight: 600;
+
+            }
+        }
+
+        p,
+        ul {
+            margin-bottom: 30px;
+        }
+    }
+
+
+    .support-section {
+        background: #f3f6ff;
+        padding: 64px 0 70px 0;
+
+
+        @include media-breakpoint-down(md) {
+            padding: 30px 0 50px 0;
+        }
+
+        h2 {
+            color: #000;
+        }
+
+        &__content {
+            margin-top: 64px;
+
+            @include media-breakpoint-down(md) {
+                margin-top: 35px;
+            }
+        }
+
+        p,
+        ul li {
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 29.37px;
+            color: #000;
+
+            @include media-breakpoint-down(md) {
+                font-size: 14px;
+                line-height: 28px;
+                letter-spacing: 0;
+            }
+
+            b {
+                font-weight: 600;
+
+            }
+        }
+
+        p,
+        ul {
+            margin-bottom: 30px;
+        }
+    }
+
+
+    .confidentiality-section {
+        padding: 64px 0 116px 0;
+        background: #ffff;
+
+
+        @include media-breakpoint-down(md) {
+            padding: 40px 0 42px 0;
+        }
+
+        h2 {
+            color: #000;
+        }
+
+        &__content {
+            width: 100%;
+            max-width: 1000px;
+            margin-top: 60px;
+
+            @include media-breakpoint-down(md) {
+                margin-top: 40px;
+            }
+        }
+
+        p,
+        ul li {
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 29.37px;
+            color: #000;
+
+            @include media-breakpoint-down(md) {
+                font-size: 14px;
+                line-height: 28px;
+                letter-spacing: 0;
+            }
+
+            b {
+                font-weight: 600;
+
+            }
+        }
+
+        p,
+        ul {
+            margin-bottom: 30px;
+        }
+    }
+}

@@ -262,13 +262,13 @@ ul {
         &::before {
             content: " ";
             display: inline-block;
-            width: 6px;
-            height: 6px;
+            width: 4px;
+            height: 4px;
             border-radius: 50%;
             background: #000;
             position: absolute;
             left: 3px;
-            top: 10px;
+            top: 12px;
         }
     }
 }
@@ -293,5 +293,29 @@ ul {
         font-size: 14px;
         padding: 0 5px;
         line-height: 20px;
+    }
+}
+
+.yutaka-heading-line {
+    position: relative;
+    margin-bottom: 20px !important;
+    border-left: 4px solid $color-primary;
+    padding-left: 20px;
+
+    @include media-breakpoint-down(md) {
+        border-left-width: 2px;
+        padding-left: 10px;
+    }
+
+    &.mb-0 {
+        margin-bottom: 0 !important;
+    }
+}
+
+.yutaka-heading-space {
+    padding-left: 20px;
+
+    @include media-breakpoint-down(md) {
+        padding-left: 10px;
     }
 }

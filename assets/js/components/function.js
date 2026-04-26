@@ -172,14 +172,13 @@ import 'swiper/css/effect-fade';
                 slidesPerView: 1,
                 loop: true,
                 effect: 'fade',
-                // fadeEffect: {
-                //     crossFade: true
-                // },
-                // autoplay: {
-                //     delay: 5000,
-                //     disableOnInteraction: false,
-                // },
-                autoplay: false,
+                fadeEffect: {
+                    crossFade: true
+                },
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
             });
         }
     }
