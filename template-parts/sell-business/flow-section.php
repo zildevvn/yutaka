@@ -1,29 +1,39 @@
 <?php
 $steps = [
     [
-        'title' => 'お申込み・初回ヒアリング',
-        'image' => 'img-flow-001.png',
-        'content' => 'まずは、事業内容や法人の現況、ご希望条件についてお伺いします。あわせて、案件化に必要となる資料をご提出いただきます。'
+        'title' => 'まずはお問い合わせください',
+        'image' => 'img-flow-sell-001.jpg',
+        'content' => 'お電話・メール・お問い合わせフォームよりご連絡ください。<br>会社売買や法人の承継に関するご相談は無料で承っております。'
     ],
     [
-        'title' => '案件化・買主様の募集',
-        'image' => 'img-flow-002.png',
-        'content' => 'ご提供いただいた情報を整理し、買主様の募集を開始します。この段階では、<b>会社が特定されないよう配慮した形</b>で情報を取り扱います。'
+        'title' => '法人の状況をお伺いします',
+        'image' => 'img-flow-sell-002.jpg',
+        'content' => 'お電話またはメールにて、会社の現状やご希望条件をお伺いします。<br>事前に法人に関する資料をご準備いただけますと、よりスムーズにご案内できます。あわせて、お手続き全体の流れについてもご説明いたします。'
     ],
     [
-        'title' => 'デューデリジェンス・条件交渉',
-        'image' => 'img-flow-003.png',
-        'content' => '購入意向のある相手が現れた後、まずは秘密保持契約を締結し、そのうえで法人や事業に関する詳細情報を開示していきます。<br><br>その後、買主様側によるデューデリジェンスを経て、譲渡条件や引継ぎ内容の確認・交渉を行い、基本合意へ進みます。'
+        'title' => 'ご売却方法・条件の整理',
+        'image' => 'img-flow-sell-003.jpg',
+        'content' => '法人の状況やご希望を踏まえ、売却の進め方や条件を整理していきます。ご希望金額や譲渡条件についても、相場感を踏まえてご相談いただけます。'
     ],
     [
-        'title' => '最終契約',
-        'image' => 'img-flow-004.png',
-        'content' => '諸条件が整い次第、最終契約を締結します。契約書の内容や手続きの進行についても、丁寧にサポートいたします。'
+        'title' => 'ご案内開始',
+        'image' => 'img-flow-sell-004.jpg',
+        'content' => '内容を整えたうえで、買主様へのご案内を開始します。案件に応じて、WEB掲載等を通じて購入希望者とのマッチングを進めてまいります。'
     ],
     [
-        'title' => '譲渡・引継ぎ',
-        'image' => 'img-flow-005.png',
-        'content' => '契約内容に基づき、譲渡手続きを実行します。案件によっては、引継ぎや移行のために3か月〜半年程度の移行期間を設ける場合もあります。'
+        'title' => '購入希望者が現れた際のご連絡',
+        'image' => 'img-flow-sell-005.jpg',
+        'content' => '購入希望者からお申込みが入りましたら、内容確認のご連絡を差し上げます。条件やご意向を確認しながら、譲渡可否を慎重に進めます。'
+    ],
+    [
+        'title' => '契約締結・譲渡準備',
+        'image' => 'img-flow-sell-006.jpg', // Placeholder
+        'content' => '条件がまとまり次第、契約書を作成し、正式なお手続きへ進みます。必要書類のご案内や進行管理についても、丁寧にサポートいたします。'
+    ],
+    [
+        'title' => '決済・お引渡し',
+        'image' => 'img-flow-sell-007.jpg', // Placeholder
+        'content' => '代表者変更等の必要な手続きが完了した後、売買代金の決済を行い、法人に関する物品や書類のお引渡しとなります。'
     ],
 ];
 ?>
@@ -37,7 +47,7 @@ $steps = [
                 <div class="flow-item">
                     <div class="flow-item__number"><?= $index + 1 ?></div>
                     <div class="flow-item__image">
-                        <img src="<?= get_template_directory_uri() ?>/assets/images/corporate-transfer/<?= $step['image'] ?>"
+                        <img src="<?= get_template_directory_uri() ?>/assets/images/sell-business/<?= $step['image'] ?>"
                             alt="<?= $step['title'] ?>">
                         <div class="flow-item__overlay">
                             <h3 class="flow-item__title"><?= $step['title'] ?></h3>
