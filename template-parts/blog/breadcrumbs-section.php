@@ -1,4 +1,4 @@
 <?php
 $title = 'ブログ';
-sazukaru_breadcrumbs($title);
+yutaka_breadcrumbs($title);
 ?>

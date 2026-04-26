@@ -1,4 +1,4 @@
-<section class="sazukaru-section content-section">
+<section class="yutaka-section content-section">
     <div class="content-section-header">
         <div class="container">
             <p class="content-section-header__title mb-0">ジョージアにおける代理出産</p>

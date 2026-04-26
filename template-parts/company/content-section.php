@@ -1,4 +1,4 @@
-<section class="sazukaru-section content-section">
+<section class="yutaka-section content-section">
     <div class="container">
         <div class="content-section__title">
             <h2 class="h4">会社概要</h2>

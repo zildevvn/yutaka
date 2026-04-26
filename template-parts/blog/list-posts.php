@@ -62,12 +62,11 @@ if ($query->have_posts()): ?>
         <?php endwhile; ?>
     </div>
     <div class="blog-pagination d-flex justify-content-center">
-        <?php sazukaru_the_posts_navigation(array(
+        <?php yutaka_the_posts_navigation(array(
             'prev_text' => '<svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 11L1 6L7 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
             'next_text' => '<svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L7 6L1 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
         ), false, $query); ?>
     </div>
-
     <?php wp_reset_postdata();
 else: ?>
     <p>投稿が見つかりませんでした。</p>

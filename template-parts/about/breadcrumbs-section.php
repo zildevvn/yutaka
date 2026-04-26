@@ -1,4 +1,4 @@
 <?php
-$title = 'Sazukaruについて';
-sazukaru_breadcrumbs($title);
+$title = 'yutakaについて';
+yutaka_breadcrumbs($title);
 ?>

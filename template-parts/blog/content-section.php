@@ -1,4 +1,4 @@
-<section class="sazukaru-section blog-content-section">
+<section class="yutaka-section blog-content-section">
     <div class="container">
         <div class="blog-content-section-grid">
             <div class="blog-content-section-grid__left">

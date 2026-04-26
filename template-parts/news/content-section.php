@@ -1,4 +1,4 @@
-<section class="sazukaru-section blog-content-section news-content-section">
+<section class="yutaka-section blog-content-section news-content-section">
     <div class="container">
         <div class="news-list" id="ajax-blog-container">
             <?php
@@ -32,11 +32,11 @@
 
         <?php if ($query->max_num_pages > 1): ?>
             <div class="blog-pagination d-flex justify-content-center">
-                <?php sazukaru_the_posts_navigation(array(
+                <?php yutaka_the_posts_navigation(array(
                     'prev_text' => '<svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 11L1 6L7 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
                     'next_text' => '<svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L7 6L1 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
                 ), false, $query); ?>
-            </div>
+                </div>
         <?php endif; ?>
     </div>
 </section>
