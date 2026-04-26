@@ -7381,6 +7381,43 @@ body.logged-in .mobile-menu-overlay {
 .home .hero-section .swiper-wrapper {
   height: auto;
 }
+.home .hero-section .swiper-button-prev,
+.home .hero-section .swiper-button-next {
+  width: 50px;
+  height: 50px;
+  background: #f48400;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.home .hero-section .swiper-button-prev svg,
+.home .hero-section .swiper-button-next svg {
+  fill: coral;
+  width: 100%;
+  height: auto;
+  max-width: 22px;
+}
+.home .hero-section .swiper-button-prev svg path,
+.home .hero-section .swiper-button-next svg path {
+  stroke: #fff;
+}
+.home .hero-section .swiper-button-prev {
+  left: 40px;
+}
+@media (max-width: 767.98px) {
+  .home .hero-section .swiper-button-prev {
+    left: 10px;
+  }
+}
+.home .hero-section .swiper-button-next {
+  right: 40px;
+}
+@media (max-width: 767.98px) {
+  .home .hero-section .swiper-button-next {
+    right: 10px;
+  }
+}
 .home .hero-section .swiper-slide {
   height: auto;
   align-items: center;
