@@ -211,7 +211,7 @@ import 'swiper/css/effect-fade';
                         spaceBetween: 24,
                     },
                     1024: {
-                        slidesPerView: 4.6,
+                        slidesPerView: 4.8,
                         spaceBetween: 30,
                     },
                 },
