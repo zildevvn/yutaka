@@ -10362,6 +10362,35 @@ body.page-template-about-template .company-section .company-item__badges .badge-
 body.page-template-about-template .company-section .company-item__info {
   flex: 1;
 }
+body.page-template-about-template .company-section .company-item__info .item-info {
+  display: flex;
+}
+body.page-template-about-template .company-section .company-item__info .item-info__title {
+  background: #ebebeb;
+  font-size: 14px;
+  font-weight: 300;
+  color: #000;
+  font-family: "Hiragino Sans", sans-serif;
+  padding-left: 12px;
+  width: 25%;
+  line-height: 28px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+body.page-template-about-template .company-section .company-item__info .item-info__content {
+  font-size: 14px;
+  font-weight: 300;
+  color: #000;
+  font-family: "Hiragino Sans", sans-serif;
+  padding: 8px;
+  line-height: 28px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 1;
+  width: 100%;
+  border-bottom: 1px dashed #d9d9d9;
+}
 body.page-template-about-template .company-section .company-item__table {
   width: 100%;
   border-collapse: collapse;

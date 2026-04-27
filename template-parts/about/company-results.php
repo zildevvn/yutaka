@@ -100,7 +100,7 @@ $company_query = new WP_Query($query_args);
                         </div>
                         <img src="<?php echo esc_url($thumbnail); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
                     </div>
-                    <div class="company-item__info">
+                    <div class="company-item__info d-none d-md-block">
                         <table class="company-item__table">
                             <tr>
                                 <th>主な業種</th>
@@ -120,14 +120,55 @@ $company_query = new WP_Query($query_args);
                             </tr>
                         </table>
                     </div>
-                </div>
 
-                <?php if (!empty($summary)): ?>
+                    <div class="company-item__info d-md-none">
+                        <div class="item-info">
+                            <div class="item-info__title">主な業種</div>
+                            <div class="item-info__content">
+                                <?php echo esc_html($main_industry); ?>
+                            </div>
+                        </div>
+
+
+                        <div class="item-info">
+                            <div class="item-info__title">地域</div>
+                            <div class="item-info__content">
+                                <?php echo esc_html($region); ?>
+                            </div>
+                        </div>
+
+
+
+                        <div class="item-info">
+                            <div class="item-info__title">売上高</div>
+                            <div class="item-info__content">
+                                <?php echo esc_html($sales); ?>
+                            </div>
+                        </div>
+
+
+                        <div class="item-info">
+                            <div class="item-info__title">希望金額</div>
+                            <div class="item-info__content">
+                                <?php echo esc_html($desired_price); ?>
+                            </div>
+                        </div>
+
+
+                        <div class="item-info">
+                            <div class="item-info__title">
+                                譲渡理由</div>
+                            <div class="item-info__content">
+                                <?php echo esc_html($reason_for_transfer); ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <?php if (!empty($summary)): ?>
                     <div class="company-item__summary">
                         <?php echo esc_html($summary); ?>
                     </div>
                 <?php endif; ?>
-
                 <div class="company-item__button-wrapper">
                     <a href="<?php the_permalink(); ?>" class="company-item__button">詳細を見る <svg width="7" height="11"
                             viewBox="0 0 7 11" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -136,7 +177,6 @@ $company_query = new WP_Query($query_args);
                 </div>
             </div>
         <?php endwhile; ?>
-
         <div class="company-pagination">
             <?php
             $pagination_args = array();
@@ -154,52 +194,6 @@ $company_query = new WP_Query($query_args);
             ));
             ?>
         </div>
-    <?php else: ?>
-        <!-- Fallback fake items if no posts match so the design is visible -->
-        <?php for ($i = 1; $i <= 2; $i++): ?>
-            <div class="company-item">
-                <h3 class="company-item__title">テキスト</h3>
-                <div class="company-item__body">
-                    <div class="company-item__image">
-                        <div class="company-item__badges">
-                            <span class="badge-new">NEW</span>
-                            <span class="badge-no">No.0000</span>
-                        </div>
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about/bg-hero-ab-desktop.jpg"
-                            alt="Company Image" />
-                    </div>
-                    <div class="company-item__info">
-                        <table class="company-item__table">
-                            <tr>
-                                <th>主な業種</th>
-                                <td>テキストテキスト</td>
-                                <th>希望金額</th>
-                                <td>テキストテキスト</td>
-                            </tr>
-                            <tr>
-                                <th>地域</th>
-                                <td>テキストテキスト</td>
-                                <th>譲渡理由</th>
-                                <td>テキストテキスト</td>
-                            </tr>
-                            <tr>
-                                <th>売上高</th>
-                                <td colspan="3">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                <div class="company-item__summary">
-                    テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>テキストテキストテキストテキストテキストテキストテキスト
-                </div>
-                <div class="company-item__button-wrapper">
-                    <a href="#" class="company-item__button">詳細を見る <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 1L5.5 5.5L1 10" stroke="white" stroke-width="1.5" stroke-linecap="round" />
-                        </svg></a>
-                </div>
-            </div>
-        <?php endfor; ?>
     <?php endif;
     wp_reset_postdata(); ?>
 </div>
