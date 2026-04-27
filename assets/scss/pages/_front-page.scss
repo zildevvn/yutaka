@@ -50,7 +50,7 @@
             align-items: center;
             display: flex;
 
-            &:first-child {
+            &.first-item {
                 .swiper-slide__image {
                     display: flex;
                     align-items: end;
@@ -597,7 +597,7 @@
             }
 
             .swiper-pagination {
-                position: static;
+                position: relative;
                 width: 183px;
                 height: 9px;
                 background: #cccccc;

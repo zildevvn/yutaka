@@ -9,6 +9,7 @@ $sliders = [
         'bgImage' => '',
         'bgImageMb' => '',
         'image' => 'image-hero-001.png',
+        'class' => 'first-item'
     ],
     [
         'heading' => '最高の出口を、<br/>最高の入り口へ。',
@@ -18,6 +19,7 @@ $sliders = [
         'bgImage' => 'bg-hero-001.jpg',
         'bgImageMb' => 'bg-hero-mb-001.png',
         'image' => 'image-hero-002.png',
+        'class' => ''
     ]
 ];
 ?>
@@ -26,7 +28,7 @@ $sliders = [
     <div class="hero-section__carousel swiper">
         <div class="swiper-wrapper">
             <?php foreach ($sliders as $index => $slide): ?>
-                <div class="swiper-slide">
+                <div class="swiper-slide <?= $slide['class'] ?>">
                     <div class="swiper-slide__bg">
                         <?php if (!empty($slide['bgImage'])): ?>
                             <img class="d-md-none"

@@ -7423,23 +7423,23 @@ body.logged-in .mobile-menu-overlay {
   align-items: center;
   display: flex;
 }
-.home .hero-section .swiper-slide:first-child .swiper-slide__image {
+.home .hero-section .swiper-slide.first-item .swiper-slide__image {
   display: flex;
   align-items: end;
   justify-content: end;
 }
 @media (max-width: 767.98px) {
-  .home .hero-section .swiper-slide:first-child .swiper-slide__image {
+  .home .hero-section .swiper-slide.first-item .swiper-slide__image {
     position: relative;
     justify-content: start;
     padding-bottom: 0;
   }
-  .home .hero-section .swiper-slide:first-child .swiper-slide__image img {
+  .home .hero-section .swiper-slide.first-item .swiper-slide__image img {
     margin-left: -20px;
   }
 }
 @media (max-width: 767.98px) {
-  .home .hero-section .swiper-slide:first-child .yutaka-button {
+  .home .hero-section .swiper-slide.first-item .yutaka-button {
     position: absolute;
     left: 15px;
     bottom: 70px;
@@ -7937,7 +7937,7 @@ body.logged-in .mobile-menu-overlay {
   transform: rotate(180deg);
 }
 .home .buyer-listing-section__controls .swiper-pagination {
-  position: static;
+  position: relative;
   width: 183px;
   height: 9px;
   background: #cccccc;
