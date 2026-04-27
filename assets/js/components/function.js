@@ -88,9 +88,78 @@ import 'swiper/css/effect-fade';
         }
     }
 
+    function initCompanyFilter() {
+        if ($('.company-section').length === 0) return;
+
+        const container = $('#company-main-container');
+
+        $(document).on('click', '.company-filter a, .company-pagination a', function(e) {
+            e.preventDefault();
+            
+            if ($(this).hasClass('company-filter__all')) {
+                $(this).siblings('.company-filter__list').addClass('is-expanded');
+                $(this).hide();
+            }
+
+            const href = $(this).attr('href');
+            if(!href || href === '#') return;
+
+            const urlObj = new URL(href, window.location.href);
+            const params = new URLSearchParams(urlObj.search);
+            
+            let paged = params.get('paged') || 1;
+            const pageMatch = urlObj.pathname.match(/\/page\/(\d+)/);
+            if (pageMatch) {
+                paged = pageMatch[1];
+            }
+
+            const data = {
+                action: 'filter_company',
+                industry: params.get('industry') || '',
+                region: params.get('region') || '',
+                paged: paged
+            };
+
+            container.css('opacity', '0.5');
+
+            $.post(ajax_object.ajax_url, data, function(response) {
+                if(response.success) {
+                    container.html(response.data);
+                    
+                    // Update active classes on sidebar
+                    $('.company-filter__list a').removeClass('active');
+                    if (data.industry) {
+                        $('.company-filter__list a').each(function() {
+                            if($(this).attr('href').indexOf('industry=' + data.industry) !== -1) {
+                                $(this).addClass('active');
+                            }
+                        });
+                    }
+                    if (data.region) {
+                        $('.company-filter__list a').each(function() {
+                            if($(this).attr('href').indexOf('region=' + data.region) !== -1) {
+                                $(this).addClass('active');
+                            }
+                        });
+                    }
+                    
+                    window.history.pushState({}, '', href);
+                    
+                    $('html, body').animate({
+                        scrollTop: $('.company-section').offset().top - 100
+                    }, 500);
+                }
+                container.css('opacity', '1');
+            }).fail(function() {
+                container.css('opacity', '1');
+            });
+        });
+    }
+
     $(document).ready(function () {
         initHeroCarousel();
         initHeaderScroll();
         initBuyerCarousel();
+        initCompanyFilter();
     });
 })(jQuery); 

@@ -104,6 +104,40 @@ if (!function_exists('yutaka_create_custom_post_type')) {
 			'show_in_rest' => true,
 		));
 
+
+
+		register_post_type('company', array(
+			'labels' => array(
+				'name' => __('会社情報'),
+				'singular_name' => __('会社情報'),
+				'add_new' => __('新規追加'),
+				'add_new_item' => __('会社情報を追加'),
+				'edit_item' => __('会社情報を編集'),
+				'new_item' => __('新しい会社情報'),
+				'view_item' => __('会社情報を表示'),
+				'search_items' => __('会社情報を検索'),
+				'not_found' => __('会社情報が見つかりません'),
+				'not_found_in_trash' => __('ゴミ箱に会社情報はありません'),
+				'all_items' => __('すべての会社情報'),
+				'menu_name' => __('会社情報'),
+			),
+			'label' => __('会社情報', 'yutaka'),
+			'supports' => array('title', 'editor', 'thumbnail', 'revisions', 'page-attributes'),
+			'menu_icon' => 'dashicons-admin-generic',
+			'hierarchical' => false,
+			'public' => true,
+			'show_ui' => true,
+			'show_in_menu' => true,
+			'menu_position' => 5,
+			'show_in_admin_bar' => true,
+			'show_in_nav_menus' => true,
+			'can_export' => true,
+			'has_archive' => false,
+			'exclude_from_search' => false,
+			'publicly_queryable' => true,
+			'show_in_rest' => true,
+		));
+
 	}
 
 	add_action('init', 'yutaka_create_custom_post_type', 0);
@@ -135,27 +169,50 @@ if (!function_exists('yutaka_create_custom_taxonomy')) {
 		));
 
 
-		// register_taxonomy('type-wine', array('wine'), array(
-		// 	'labels' => array(
-		// 		'name' => 'Types',
-		// 		'singular_name' => 'Type',
-		// 		'search_items' => 'Search Type',
-		// 		'all_items' => 'All Type',
-		// 		'edit_item' => 'Edit Type',
-		// 		'update_item' => 'Update Type',
-		// 		'add_new_item' => 'Add New Type',
-		// 		'new_item_name' => 'New Type Name',
-		// 		'menu_name' => 'Types',
-		// 	),
-		// 	'rewrite' => false,
-		// 	'hierarchical' => true,
-		// 	'public' => false,
-		// 	'show_ui' => true,
-		// 	'show_admin_column' => true,
-		// 	'show_in_nav_menus' => true,
-		// 	'show_tagcloud' => true,
-		// 	'show_in_rest' => true,
-		// ));
+		register_taxonomy('industry', array('company'), array(
+			'labels' => array(
+				'name' => 'Industry',
+				'singular_name' => 'Industry',
+				'search_items' => 'Search Industry',
+				'all_items' => 'All Industry',
+				'edit_item' => 'Edit Industry',
+				'update_item' => 'Update Industry',
+				'add_new_item' => 'Add New Industry',
+				'new_item_name' => 'New Industry Name',
+				'menu_name' => 'Industry',
+			),
+			'rewrite' => false,
+			'hierarchical' => true,
+			'public' => false,
+			'show_ui' => true,
+			'show_admin_column' => true,
+			'show_in_nav_menus' => true,
+			'show_tagcloud' => true,
+			'show_in_rest' => true,
+		));
+
+
+		register_taxonomy('region', array('company'), array(
+			'labels' => array(
+				'name' => 'Region',
+				'singular_name' => 'Region',
+				'search_items' => 'Search Region',
+				'all_items' => 'All Region',
+				'edit_item' => 'Edit Region',
+				'update_item' => 'Update Region',
+				'add_new_item' => 'Add New Region',
+				'new_item_name' => 'New Region Name',
+				'menu_name' => 'Region',
+			),
+			'rewrite' => false,
+			'hierarchical' => true,
+			'public' => false,
+			'show_ui' => true,
+			'show_admin_column' => true,
+			'show_in_nav_menus' => true,
+			'show_tagcloud' => true,
+			'show_in_rest' => true,
+		));
 	}
 	add_action('init', 'yutaka_create_custom_taxonomy', 0);
 }
