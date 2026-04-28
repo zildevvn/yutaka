@@ -38,6 +38,7 @@ if (!function_exists('yutaka_create_custom_post_type')) {
 			'exclude_from_search' => false,
 			'publicly_queryable' => true,
 			'show_in_rest' => true,
+			'rewrite' => array('slug' => 'news-item'),
 		));
 
 		register_post_type('buyer_listing', array(

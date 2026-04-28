@@ -1,42 +1,61 @@
-<section class="yutaka-section blog-content-section news-content-section">
+<section class="yutaka-section news-section">
     <div class="container">
-        <div class="news-list" id="ajax-blog-container">
-            <?php
-            $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-            $args = array(
-                'post_type' => 'news',
-                'posts_per_page' => 9,
-                'paged' => $paged,
-            );
-            $query = new WP_Query($args);
+        <p class="yutaka-section__label">news</p>
+        <h2 class="yutaka-section__title">新着情報</h2>
+        <div class="yutaka-section__line"></div>
 
-            if ($query->have_posts()):
-                while ($query->have_posts()):
-                    $query->the_post(); ?>
-                    <article <?php post_class('news-item'); ?>>
-                        <a href="<?php the_permalink(); ?>" class="news-item__wrapper">
-                            <div class="news-item__date">
-                                <?php echo get_the_date('Y.m.d'); ?>
-                            </div>
-                            <div class="news-item__content">
-                                <h3 class="news-item__title"><?php the_title(); ?></h3>
-                            </div>
+        <?php
+        $paged = (get_query_var('paged')) ? get_query_var('paged') : (get_query_var('page') ? get_query_var('page') : 1);
+        $news_query = new WP_Query(array(
+            'post_type' => 'news',
+            'posts_per_page' => 10,
+            'paged' => $paged,
+            'post_status' => 'publish',
+        ));
+        ?>
+
+        <?php if ($news_query->have_posts()): ?>
+            <div class="news-section__list">
+                <?php
+                while ($news_query->have_posts()):
+                    $news_query->the_post();
+                    $post_date = get_the_date('Y/m/d');
+                    $is_new = get_field('is_new');
+                    $categories = get_the_terms(get_the_ID(), 'category-news');
+                    $category_name = (!is_wp_error($categories) && !empty($categories)) ? esc_html($categories[0]->name) : 'お知らせ';
+                    ?>
+                    <article class="news-item">
+                        <a href="<?php the_permalink(); ?>" class="news-item__link">
+                            <span class="news-item__date"><?php echo esc_html($post_date); ?></span>
+                            <span class="news-item__cat"><?php echo $category_name; ?></span>
+                            <?php if ($is_new): ?>
+                                <span class="news-item__new">NEW</span>
+                            <?php endif; ?>
+                            <span class="news-item__title"><?php the_title(); ?></span>
+                            <span class="news-item__arrow">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icon-arrow.png"
+                                    alt="icon" />
+                            </span>
                         </a>
                     </article>
                 <?php endwhile;
-                wp_reset_postdata();
-            else: ?>
-                <p>投稿が見つかりませんでした。</p>
-            <?php endif; ?>
-        </div>
+                wp_reset_postdata(); ?>
+            </div>
 
-        <?php if ($query->max_num_pages > 1): ?>
-            <div class="blog-pagination d-flex justify-content-center">
-                <?php yutaka_the_posts_navigation(array(
-                    'prev_text' => '<svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 11L1 6L7 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-                    'next_text' => '<svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L7 6L1 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-                ), false, $query); ?>
+            <?php if ($news_query->max_num_pages > 1): ?>
+                <div class="news-pagination">
+                    <?php
+                    echo paginate_links(array(
+                        'base' => add_query_arg('paged', '%#%'),
+                        'format' => '?paged=%#%',
+                        'total' => $news_query->max_num_pages,
+                        'current' => $paged,
+                        'prev_text' => '前のページ',
+                        'next_text' => '次のページ',
+                    ));
+                    ?>
                 </div>
+            <?php endif; ?>
         <?php endif; ?>
     </div>
 </section>
