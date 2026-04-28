@@ -150,7 +150,7 @@ get_header();
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>仕入先・外注先</th>
+                                    <th>主要仕入/外注先</th>
                                     <td>
                                         <?php echo nl2br(esc_html($major_suppliers ?: 'テキストテキストテキスト')); ?>
                                     </td>
@@ -162,19 +162,19 @@ get_header();
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>主要免許・許可</th>
+                                    <th>主な有資格者</th>
                                     <td>
                                         <?php echo nl2br(esc_html($major_licenses_permits ?: 'テキストテキストテキスト')); ?>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>正社員・契約社員数</th>
+                                    <th>主な許認可</th>
                                     <td>
                                         <?php echo esc_html($number_of_fulltime_contract_employees ?: 'テキストテキストテキスト'); ?>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>パート・アルバイト・派遣社員数</th>
+                                    <th>正社員・契約社員数</th>
                                     <td>
                                         <?php echo esc_html($number_of_parttime_temporary_staff ?: 'テキストテキストテキスト'); ?>
                                     </td>

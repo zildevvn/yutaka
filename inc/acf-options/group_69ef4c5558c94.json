@@ -46,7 +46,7 @@
         },
         {
             "key": "field_69ef4c99e2c7b",
-            "label": "Revenue",
+            "label": "売上高",
             "name": "revenue",
             "aria-label": "",
             "type": "text",
@@ -66,50 +66,8 @@
             "append": ""
         },
         {
-            "key": "field_69ef4ca8e2c7c",
-            "label": "Price",
-            "name": "price",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_69ef4cb3e2c7d",
-            "label": "Reason For Sale",
-            "name": "reason_for_sale",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
             "key": "field_69f0a30e72cdf",
-            "label": "Operating Profit",
+            "label": "実態営業利益",
             "name": "operating_profit",
             "aria-label": "",
             "type": "text",
@@ -130,7 +88,7 @@
         },
         {
             "key": "field_69f0a31972ce0",
-            "label": "Net Assets",
+            "label": "時価純資産",
             "name": "net_assets",
             "aria-label": "",
             "type": "text",
@@ -150,8 +108,29 @@
             "append": ""
         },
         {
+            "key": "field_69ef4ca8e2c7c",
+            "label": "希望",
+            "name": "price",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_69f0a33972ce1",
-            "label": "Succession Conditions",
+            "label": "引継ぎ条件",
             "name": "succession_conditions",
             "aria-label": "",
             "type": "text",
@@ -171,8 +150,29 @@
             "append": ""
         },
         {
+            "key": "field_69ef4cb3e2c7d",
+            "label": "譲渡理由",
+            "name": "reason_for_sale",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_69f0e308f64f6",
-            "label": "Major Customers",
+            "label": "主要顧客",
             "name": "major_customers",
             "aria-label": "",
             "type": "text",
@@ -193,7 +193,7 @@
         },
         {
             "key": "field_69f0e31df64f7",
-            "label": "Major Suppliers",
+            "label": "主要仕入\/外注先",
             "name": "major_suppliers",
             "aria-label": "",
             "type": "text",
@@ -214,7 +214,7 @@
         },
         {
             "key": "field_69f0e332f64f8",
-            "label": "Qualified Personnel",
+            "label": "主な有資格者",
             "name": "qualified_personnel",
             "aria-label": "",
             "type": "text",
@@ -235,7 +235,7 @@
         },
         {
             "key": "field_69f0e344f64f9",
-            "label": "Major Licenses & Permits",
+            "label": "主な許認可",
             "name": "major_licenses_permits",
             "aria-label": "",
             "type": "text",
@@ -256,7 +256,7 @@
         },
         {
             "key": "field_69f0e357f64fa",
-            "label": "Number of Full-time \/ Contract Employees",
+            "label": "正社員・契約社員数",
             "name": "number_of_full-time__contract_employees",
             "aria-label": "",
             "type": "text",
@@ -277,7 +277,7 @@
         },
         {
             "key": "field_69f0e369f64fb",
-            "label": "Number of Part-time \/ Temporary Staff",
+            "label": "パート・アルバイト数",
             "name": "number_of_part-time__temporary_staff",
             "aria-label": "",
             "type": "text",
@@ -339,5 +339,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1777394697
+    "modified": 1777396903
 }
