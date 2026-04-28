@@ -1,7 +1,7 @@
 <section class="yutaka-section news-section">
     <div class="container">
         <p class="yutaka-section__label">news</p>
-        <h2 class="yutaka-section__title">新着情報</h2>
+        <h2 class="yutaka-section__title">ニュース</h2>
         <div class="yutaka-section__line"></div>
 
         <?php

@@ -9,7 +9,7 @@ get_header();
     <?php
     $imageDesktop = get_template_directory_uri() . '/assets/images/company/hero-company-desktop.jpg';
     $imageMobile = get_template_directory_uri() . '/assets/images/company/hero-company-mobile.jpg';
-    yutaka_hero_section_shared('お知らせ', 'News', $imageDesktop, $imageMobile);
+    yutaka_hero_section_shared('ニュース', 'News', $imageDesktop, $imageMobile);
     ?>
     <?php get_template_part('template-parts/news/content-section'); ?>
 </main>
