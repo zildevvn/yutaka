@@ -14,12 +14,17 @@
 
             if ($buyer_banner_query->have_posts()):
                 while ($buyer_banner_query->have_posts()):
-                    $buyer_banner_query->the_post(); ?>
-                    <div class="buyer-section__banner text-center">
+                    $buyer_banner_query->the_post();
+                    $custom_link = get_field('custom_link');
+                    $target = isset($custom_link['target']) ? $custom_link['target'] : '_self';
+                    $link = !empty($custom_link['url']) ? $custom_link['url'] : get_permalink();
+
+                    ?>
+                    <a href="<?= $link ?>" target="<?= $target ?>" class="buyer-section__banner d-flex justify-content-center">
                         <?php if (has_post_thumbnail()): ?>
                             <?php the_post_thumbnail('full', array('class' => 'buyer-section__banner-img', 'alt' => get_the_title())); ?>
                         <?php endif; ?>
-                    </div>
+                    </a>
                 <?php endwhile;
                 wp_reset_postdata();
             endif; ?>

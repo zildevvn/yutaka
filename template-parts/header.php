@@ -60,7 +60,7 @@ $cta_header = get_field('cta_header', 'option');
 </header>
 
 <header id="header-scroll" class="header-main">
-    <div class="container-full">
+    <div class="container">
         <div class="header-inner d-flex gap-2 justify-content-between align-items-center">
             <div class="header-logo">
                 <a href="<?php echo home_url(); ?>" aria-label="<?php echo get_bloginfo('name'); ?>">

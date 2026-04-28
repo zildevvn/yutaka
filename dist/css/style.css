@@ -8232,6 +8232,10 @@ body.logged-in .mobile-menu-overlay {
     margin-top: 32px;
   }
 }
+.home .buyer-section__content img {
+  margin-left: auto;
+  margin-right: auto;
+}
 @media (max-width: 480.98px) {
   .home .buyer-section__content img {
     margin-right: -15px;
