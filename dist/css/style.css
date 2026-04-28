@@ -10677,7 +10677,7 @@ body.page-template-about-template .company-section .company-filter__all {
 }
 @media (max-width: 767.98px) {
   .company-single-page {
-    padding: 40px 0 60px;
+    padding: 48px 0 48px;
   }
 }
 .company-single-page .container {
@@ -10774,6 +10774,9 @@ body.page-template-about-template .company-section .company-filter__all {
     margin-bottom: 35px;
   }
 }
+.company-single__section:last-child {
+  margin-bottom: 0;
+}
 .company-single__section-title {
   font-size: 26px;
   color: #002b5d;
@@ -10845,6 +10848,7 @@ body.page-template-about-template .company-section .company-filter__all {
 .company-single__table td {
   color: #000;
   font-weight: 300;
+  width: 100%;
 }
 .company-single__table td.text-red {
   color: #d04b62;

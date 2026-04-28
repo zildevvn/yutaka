@@ -24,15 +24,18 @@ get_header();
                 $thumbnail = get_the_post_thumbnail_url($post_id, 'full');
                 $title = get_the_title();
 
-                // ACF Fields (using currently available data names found in other files)
+                // ACF Fields
                 $summary = get_field('summary');
-                $features_strengths = get_field('features_strengths');
-                $revenue = get_field('revenue');
+                $price = get_field('price');
+                $reason_for_sale = get_field('reason_for_sale');
                 $operating_profit = get_field('operating_profit');
                 $net_assets = get_field('net_assets');
-                $price = get_field('price');
-                $handover_conditions = get_field('handover_conditions');
-                $reason_for_sale = get_field('reason_for_sale');
+                $succession_conditions = get_field('succession_conditions');
+                $revenue = get_field('revenue');
+                $summary = get_field('summary');
+                $is_new = get_field('is_new');
+                $company_number = get_field('company_number');
+
 
                 // Taxonomies
                 $industries = get_the_terms($post_id, 'industry');
@@ -56,9 +59,11 @@ get_header();
                                 <div class="company-single__meta">
                                     <span class="company-single__type">M&A案件情報</span>
                                     <div class="company-single__badges">
-                                        <span class="badge-new">NEW</span>
+                                        <?php if ($is_new): ?>
+                                            <span class="badge-new">NEW</span>
+                                        <?php endif; ?>
                                         <span
-                                            class="badge-no">No.<?php echo str_pad($post_id, 5, '0', STR_PAD_LEFT); ?></span>
+                                            class="badge-no">No.<?php echo esc_html($company_number ?: str_pad($post_id, 5, '0', STR_PAD_LEFT)); ?></span>
                                     </div>
                                 </div>
                                 <h1 class="company-single__title"><?php echo esc_html($title); ?></h1>
@@ -74,7 +79,7 @@ get_header();
                                 <tr>
                                     <th>特徴と強み</th>
                                     <td class="text-red">
-                                        <?php echo nl2br(esc_html($features_strengths ?: 'テキストテキストテキストテキストテキストテキストテキストテキスト')); ?>
+                                        <?php echo nl2br(esc_html($summary ?: 'テキストテキストテキストテキストテキストテキストテキストテキスト')); ?>
                                     </td>
                                 </tr>
                                 <tr>
@@ -117,7 +122,7 @@ get_header();
                                 </tr>
                                 <tr>
                                     <th>引継ぎ条件</th>
-                                    <td><?php echo esc_html($handover_conditions ?: 'テキストテキストテキスト'); ?></td>
+                                    <td><?php echo nl2br(esc_html($succession_conditions ?: 'テキストテキストテキスト')); ?></td>
                                 </tr>
                                 <tr>
                                     <th>譲渡理由</th>

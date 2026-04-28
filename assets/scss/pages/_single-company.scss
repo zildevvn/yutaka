@@ -3,7 +3,7 @@
     background: #fff;
 
     @include media-breakpoint-down(md) {
-        padding: 40px 0 60px;
+        padding: 48px 0 48px;
     }
 
     .container {
@@ -109,6 +109,10 @@
             margin-bottom: 35px;
         }
 
+        &:last-child {
+            margin-bottom: 0;
+        }
+
         &-title {
             font-size: 26px;
             color: #002b5d;
@@ -183,6 +187,7 @@
         td {
             color: #000;
             font-weight: 300;
+            width: 100%;
 
             &.text-red {
                 color: #d04b62;
