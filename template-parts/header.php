@@ -68,11 +68,32 @@ $cta_header = get_field('cta_header', 'option');
                 </a>
             </div>
 
-            <?php if (has_nav_menu('primary-menu')): ?>
-                <div class="header-menu d-none d-lg-block">
-                    <?php wp_nav_menu(array('theme_location' => 'primary-menu', 'menu_class' => 'primary-menu')) ?>
-                </div>
-            <?php endif; ?>
+            <div class="header-right d-none d-lg-flex align-items-center justify-content-end">
+                <?php if (has_nav_menu('primary-menu')): ?>
+                    <div class="header-menu d-none d-lg-block">
+                        <?php wp_nav_menu(array('theme_location' => 'primary-menu', 'menu_class' => 'primary-menu')) ?>
+                    </div>
+                <?php endif; ?>
+
+                <?php if ($phone): ?>
+                    <a href="tel:<?php echo $phone; ?>" class="header-phone d-flex align-items-end">
+                        <img src="<?= get_template_directory_uri() ?>/assets/images/icon-phone.png" alt="phone">
+
+                        <p class="mb-0 text-center">
+                            電話番号
+                            <span class="d-flex">
+                                <?php echo $phone; ?>
+                            </span>
+                        </p>
+
+                    </a>
+                <?php endif; ?>
+
+                <?php if (!empty($cta_header)): ?>
+                    <?php yutaka_get_button($cta_header['title'], $cta_header['url'], '_self', '') ?>
+                <?php endif; ?>
+            </div>
+
 
 
             <div class="header-humberger d-block d-lg-none ">
@@ -86,7 +107,9 @@ $cta_header = get_field('cta_header', 'option');
                 </button>
             </div>
         </div>
+    </div>
 </header>
+
 
 <div class="mobile-menu-overlay d-lg-none">
     <div class="mobile-menu-inner">

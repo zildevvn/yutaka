@@ -36,6 +36,14 @@ get_header();
                 $is_new = get_field('is_new');
                 $company_number = get_field('company_number');
 
+                // 案件概要
+                $major_customers = get_field('major_customers');
+                $major_suppliers = get_field('major_suppliers');
+                $qualified_personnel = get_field('qualified_personnel');
+                $major_licenses_permits = get_field('major_licenses_permits');
+                $number_of_fulltime_contract_employees = get_field('number_of_full-time__contract_employees');
+                $number_of_parttime_temporary_staff = get_field('number_of_part-time__temporary_staff');
+
 
                 // Taxonomies
                 $industries = get_the_terms($post_id, 'industry');
@@ -130,6 +138,50 @@ get_header();
                                 </tr>
                             </table>
                         </section>
+
+                        <!-- Section: 案件概要 -->
+                        <section class="company-single__section">
+                            <h2 class="company-single__section-title">案件概要</h2>
+                            <table class="company-single__table">
+                                <tr>
+                                    <th>主要顧客</th>
+                                    <td>
+                                        <?php echo nl2br(esc_html($major_customers ?: 'テキストテキストテキスト')); ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>仕入先・外注先</th>
+                                    <td>
+                                        <?php echo nl2br(esc_html($major_suppliers ?: 'テキストテキストテキスト')); ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>資格・専門職</th>
+                                    <td>
+                                        <?php echo nl2br(esc_html($qualified_personnel ?: 'テキストテキストテキスト')); ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>主要免許・許可</th>
+                                    <td>
+                                        <?php echo nl2br(esc_html($major_licenses_permits ?: 'テキストテキストテキスト')); ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>正社員・契約社員数</th>
+                                    <td>
+                                        <?php echo esc_html($number_of_fulltime_contract_employees ?: 'テキストテキストテキスト'); ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>パート・アルバイト・派遣社員数</th>
+                                    <td>
+                                        <?php echo esc_html($number_of_parttime_temporary_staff ?: 'テキストテキストテキスト'); ?>
+                                    </td>
+                                </tr>
+                            </table>
+                        </section>
+
                     </div>
                 </article>
             <?php endwhile; ?>

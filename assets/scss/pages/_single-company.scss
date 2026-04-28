@@ -135,6 +135,7 @@
 
         tr {
             border-bottom: 1px dashed #d9d9d9;
+            background: #f6f6f6;
 
             &:last-child {
                 border-bottom: none;
@@ -188,6 +189,7 @@
             color: #000;
             font-weight: 300;
             width: 100%;
+            background: #fff;
 
             &.text-red {
                 color: #d04b62;

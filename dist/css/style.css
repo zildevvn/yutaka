@@ -10884,6 +10884,7 @@ body.page-template-about-template .company-section .company-filter__all {
 }
 .company-single__table tr {
   border-bottom: 1px dashed #d9d9d9;
+  background: #f6f6f6;
 }
 .company-single__table tr:last-child {
   border-bottom: none;
@@ -10935,6 +10936,7 @@ body.page-template-about-template .company-section .company-filter__all {
   color: #000;
   font-weight: 300;
   width: 100%;
+  background: #fff;
 }
 .company-single__table td.text-red {
   color: #d04b62;
