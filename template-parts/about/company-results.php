@@ -5,7 +5,7 @@ $region_filter = isset($args['region_filter']) ? $args['region_filter'] : '';
 
 $query_args = array(
     'post_type' => 'company',
-    'posts_per_page' => 1,
+    'posts_per_page' => 10,
     'paged' => $paged,
     'tax_query' => array(
         'relation' => 'AND',
@@ -164,7 +164,7 @@ $company_query = new WP_Query($query_args);
                         </div>
                     </div>
                 </div>
-                    <?php if (!empty($summary)): ?>
+                <?php if (!empty($summary)): ?>
                     <div class="company-item__summary">
                         <?php echo esc_html($summary); ?>
                     </div>
@@ -194,6 +194,9 @@ $company_query = new WP_Query($query_args);
             ));
             ?>
         </div>
-    <?php endif;
-    wp_reset_postdata(); ?>
+    <?php else: ?>
+        <p class="no-results h4 text-center">該当する情報がありません</p>
+    <?php endif; ?>
+
+    <?php wp_reset_postdata(); ?>
 </div>

@@ -10679,7 +10679,7 @@ body.page-template-about-template .company-section .company-filter__header img {
 body.page-template-about-template .company-section .company-filter__box {
   background: #fff;
   border: 1.5px solid #d0d0d0;
-  padding: 20px 10px;
+  padding: 20px 0px;
   text-align: center;
 }
 body.page-template-about-template .company-section .company-filter__list {
@@ -10695,11 +10695,19 @@ body.page-template-about-template .company-section .company-filter__list li {
 body.page-template-about-template .company-section .company-filter__list li::before {
   content: none;
 }
-body.page-template-about-template .company-section .company-filter__list li:nth-child(n+4) {
+body.page-template-about-template .company-section .company-filter__list li:nth-child(n+7) {
   display: none;
 }
 body.page-template-about-template .company-section .company-filter__list li:last-child {
   margin-bottom: 0;
+}
+body.page-template-about-template .company-section .company-filter__list li.is-empty > a {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+body.page-template-about-template .company-section .company-filter__list li.is-empty > a:hover {
+  color: inherit;
 }
 body.page-template-about-template .company-section .company-filter__list li a {
   color: #000;
@@ -10708,12 +10716,28 @@ body.page-template-about-template .company-section .company-filter__list li a {
   line-height: 31.2px;
   transition: color 0.3s;
   font-weight: 300;
+  padding: 0 10px;
 }
-body.page-template-about-template .company-section .company-filter__list li a:hover, body.page-template-about-template .company-section .company-filter__list li a.active {
-  color: #f48400;
+body.page-template-about-template .company-section .company-filter__list li a.active {
+  background: #343d45;
+  color: #fff;
+  display: inline-block;
+  width: 100%;
 }
 body.page-template-about-template .company-section .company-filter__list.is-expanded li:nth-child(n+4) {
   display: block;
+}
+body.page-template-about-template .company-section .company-filter__list .company-filter__children {
+  list-style: none;
+  padding: 0 0 4px 14px;
+  margin: 2px 0 0;
+}
+body.page-template-about-template .company-section .company-filter__list .company-filter__children li:nth-child(n+7) {
+  display: block;
+}
+body.page-template-about-template .company-section .company-filter__list .company-filter__children li a {
+  font-size: 14px;
+  line-height: 28px;
 }
 body.page-template-about-template .company-section .company-filter__all {
   margin-top: 16px;

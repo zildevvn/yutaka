@@ -444,7 +444,7 @@ body.page-template-about-template {
             &__box {
                 background: #fff;
                 border: 1.5px solid #d0d0d0;
-                padding: 20px 10px;
+                padding: 20px 0px;
                 text-align: center;
             }
 
@@ -462,12 +462,24 @@ body.page-template-about-template {
                         content: none;
                     }
 
-                    &:nth-child(n+4) {
+                    &:nth-child(n+7) {
                         display: none;
                     }
 
                     &:last-child {
                         margin-bottom: 0;
+                    }
+
+                    &.is-empty {
+                        >a {
+                            opacity: 0.35;
+                            cursor: not-allowed;
+                            pointer-events: none;
+
+                            &:hover {
+                                color: inherit;
+                            }
+                        }
                     }
 
                     a {
@@ -477,10 +489,13 @@ body.page-template-about-template {
                         line-height: 31.2px;
                         transition: color 0.3s;
                         font-weight: 300;
+                        padding: 0 10px;
 
-                        &:hover,
                         &.active {
-                            color: $color-secondary;
+                            background: #343d45;
+                            color: #fff;
+                            display: inline-block;
+                            width: 100%;
                         }
                     }
                 }
@@ -489,6 +504,26 @@ body.page-template-about-template {
                     li {
                         &:nth-child(n+4) {
                             display: block;
+                        }
+                    }
+                }
+
+                // Nested child terms list
+                .company-filter__children {
+                    list-style: none;
+                    padding: 0 0 4px 14px;
+                    margin: 2px 0 0;
+
+                    li {
+
+                        // Children are always visible regardless of their index
+                        &:nth-child(n+7) {
+                            display: block;
+                        }
+
+                        a {
+                            font-size: 14px;
+                            line-height: 28px;
                         }
                     }
                 }

@@ -121,24 +121,51 @@ import 'swiper/css/effect-fade';
 
             $.post(ajax_object.ajax_url, data, function (response) {
                 if (response.success) {
-                    container.html(response.data);
+                    // Update results list
+                    container.html(response.data.html);
+
+                    // Update per-industry counts in the sidebar
+                    const counts = response.data.industry_counts || {};
+                    Object.keys(counts).forEach(function (slug) {
+                        const $li = $('.company-filter__list li[data-industry="' + slug + '"]');
+                        if ($li.length) {
+                            const $a = $li.find('> a');
+                            const count = counts[slug].count;
+
+                            // Replace only the count portion "(N)" at the end of the link text
+                            $a.text($a.text().replace(/\(\d+\)$/, '(' + count + ')'));
+
+                            // Toggle disabled state
+                            if (count === 0) {
+                                $li.addClass('is-empty');
+                                $a.attr({ href: '#', 'aria-disabled': 'true', tabindex: '-1' });
+                            } else {
+                                $li.removeClass('is-empty');
+                                $a.attr({ href: '?industry=' + slug + (data.region ? '&region=' + data.region : ''), 'aria-disabled': null, tabindex: null });
+                                $a.removeAttr('aria-disabled tabindex');
+                            }
+                        }
+                    });
 
                     // Update active classes on sidebar
                     $('.company-filter__list a').removeClass('active');
-                    if (data.industry) {
-                        $('.company-filter__list a').each(function () {
-                            if ($(this).attr('href').indexOf('industry=' + data.industry) !== -1) {
+                    $('.company-filter__list a').each(function () {
+                        const h = $(this).attr('href');
+                        if (!h || h === '#') return;
+                        
+                        const urlObj = new URL(h, window.location.href);
+                        const params = new URLSearchParams(urlObj.search);
+                        
+                        if (h.startsWith('?industry=')) {
+                            if (data.industry && params.get('industry') === data.industry) {
                                 $(this).addClass('active');
                             }
-                        });
-                    }
-                    if (data.region) {
-                        $('.company-filter__list a').each(function () {
-                            if ($(this).attr('href').indexOf('region=' + data.region) !== -1) {
+                        } else if (h.startsWith('?region=')) {
+                            if (data.region && params.get('region') === data.region) {
                                 $(this).addClass('active');
                             }
-                        });
-                    }
+                        }
+                    });
 
                     window.history.pushState({}, '', href);
 
