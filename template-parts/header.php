@@ -74,15 +74,18 @@ $cta_header = get_field('cta_header', 'option');
                 </div>
             <?php endif; ?>
 
-            <div class="header-humberger d-block d-lg-none">
-                <button class="humberger-btn">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+
+            <div class="header-humberger d-block d-lg-none ">
+                <button class="humberger-btn d-flex align-items-center flex-wrap">
+                    <div class="icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <p class="mb-0">Menu</p>
                 </button>
             </div>
         </div>
-    </div>
 </header>
 
 <div class="mobile-menu-overlay d-lg-none">

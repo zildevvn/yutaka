@@ -30,7 +30,7 @@ $region_filter = isset($_GET['region']) ? $_GET['region'] : '';
                             <?php
                             $industries = get_terms(array(
                                 'taxonomy' => 'industry',
-                                'hide_empty' => true,
+                                'hide_empty' => false,
                             ));
 
                             if (empty($industries) || is_wp_error($industries)) {
@@ -73,7 +73,7 @@ $region_filter = isset($_GET['region']) ? $_GET['region'] : '';
                             <?php
                             $regions = get_terms(array(
                                 'taxonomy' => 'region',
-                                'hide_empty' => true,
+                                'hide_empty' => false,
                             ));
 
                             if (empty($regions) || is_wp_error($regions)) {

@@ -147,9 +147,14 @@
         visibility: hidden;
         padding: 10px 0;
 
-        @media (max-width: 1023.98px) {
-            display: none !important;
+        @include media-breakpoint-down(lg) {
+            padding: 0;
+            // top: 10px;
         }
+
+        // @media (max-width: 1023.98px) {
+        //     display: none !important;
+        // }
 
         &.is-scrolled {
             transform: translateY(0);
@@ -158,21 +163,19 @@
             opacity: 1;
             visibility: visible;
             // box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+            @include media-breakpoint-down(lg) {
+                top: 10px;
+            }
         }
 
         body.logged-in & {
             top: 32px;
         }
 
-        // .header-logo img {
-        //     max-width: 60px;
-        // }
-
-        // ul.primary-menu li img {
-        //     width: auto;
-        //     height: 100%;
-        //     max-height: 24px;
-        // }
+        .humberger-btn {
+            border: none;
+        }
     }
 }
 

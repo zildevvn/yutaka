@@ -1,7 +1,7 @@
 <?php
 
 $args = [
-    'post_type' => 'buyer_listing',
+    'post_type' => 'company',
     'posts_per_page' => 6,
     'post_status' => 'publish',
 ];
@@ -21,8 +21,8 @@ $query = new WP_Query($args);
                     <div class="swiper-wrapper">
                         <?php while ($query->have_posts()):
                             $query->the_post();
-                            $is_news = get_field('is_new_buy');
-                            $number = get_field('number_buy');
+                            $is_news = get_field('is_new');
+                            $number = get_field('company_number');
                             ?>
                             <div class="buyer-item swiper-slide">
                                 <div class="buyer-item__img">
@@ -83,7 +83,7 @@ $query = new WP_Query($args);
             </div>
 
             <div class="buyer-listing-section__btn">
-                <a href="<?php echo home_url('/buyer-listing') ?>">新着情報一覧</a>
+                <a href="<?php echo home_url('/about-vendors/') ?>">新着情報一覧</a>
             </div>
         <?php endif; ?>
     </div>
