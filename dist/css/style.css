@@ -10916,3 +10916,158 @@ body.page-template-about-template .company-section .company-filter__all {
   color: #d04b62;
   font-weight: 500;
 }
+
+.single-post-page .article-main {
+  background: #fff;
+}
+
+.container-content {
+  max-width: 900px;
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+@media (max-width: 767.98px) {
+  .container-content {
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
+}
+
+.article-post .entry-header {
+  margin-bottom: 40px;
+}
+@media (max-width: 767.98px) {
+  .article-post .entry-header {
+    margin-bottom: 28px;
+  }
+}
+.article-post .entry-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+@media (max-width: 767.98px) {
+  .article-post .entry-meta {
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+}
+.article-post .entry-meta .posted-on {
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+  font-family: "Hiragino Sans", sans-serif;
+  line-height: 1;
+}
+.article-post .entry-meta .cat-links {
+  display: inline-flex;
+  align-items: center;
+  height: 26px;
+  padding: 0 12px;
+  background: #f48400;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 400;
+  font-family: "Hiragino Sans", sans-serif;
+  letter-spacing: 0.02em;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+.article-post .entry-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.5;
+  margin: 0 0 20px;
+  font-family: "Noto Sans JP", sans-serif;
+}
+@media (max-width: 767.98px) {
+  .article-post .entry-title {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+}
+.article-post .entry-divider {
+  width: 80px;
+  height: 3px;
+  background: #04246c;
+}
+.article-post .post-thumbnail {
+  margin-bottom: 40px;
+}
+@media (max-width: 767.98px) {
+  .article-post .post-thumbnail {
+    margin-bottom: 28px;
+  }
+}
+.article-post .post-thumbnail img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.article-post .entry-content {
+  font-size: 16px;
+  line-height: 1.9;
+  color: #333;
+  font-weight: 300;
+  font-family: "Hiragino Sans", sans-serif;
+}
+@media (max-width: 767.98px) {
+  .article-post .entry-content {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+}
+.article-post .entry-content p {
+  margin-bottom: 1.5em;
+}
+.article-post .entry-content img {
+  max-width: 100%;
+  height: auto;
+}
+.article-post .entry-content a {
+  color: #04246c;
+  text-decoration: underline;
+}
+.article-post .entry-content a:hover {
+  opacity: 0.75;
+}
+.article-post .entry-content h2, .article-post .entry-content .h2,
+.article-post .entry-content h3,
+.article-post .entry-content .h3,
+.article-post .entry-content h4,
+.article-post .entry-content .h4 {
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 2em 0 0.75em;
+  color: #111;
+  font-family: "Noto Sans JP", sans-serif;
+}
+.article-post .entry-content h2, .article-post .entry-content .h2 {
+  font-size: 22px;
+  border-left: 4px solid #04246c;
+  padding-left: 12px;
+}
+@media (max-width: 767.98px) {
+  .article-post .entry-content h2, .article-post .entry-content .h2 {
+    font-size: 18px;
+  }
+}
+.article-post .entry-content h3, .article-post .entry-content .h3 {
+  font-size: 18px;
+}
+@media (max-width: 767.98px) {
+  .article-post .entry-content h3, .article-post .entry-content .h3 {
+    font-size: 16px;
+  }
+}
+.article-post .entry-content ul,
+.article-post .entry-content ol {
+  padding-left: 1.5em;
+  margin-bottom: 1.5em;
+}
+.article-post .entry-content ul li,
+.article-post .entry-content ol li {
+  margin-bottom: 0.4em;
+}

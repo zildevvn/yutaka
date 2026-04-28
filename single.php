@@ -8,15 +8,18 @@
 get_header();
 ?>
 <div class="single-post-page">
-    <?php get_template_part('template-parts/blog/breadcrumbs-section'); ?>
     <main id="primary" class="site-main article-main">
+        <?php
+        $title = get_the_title();
+        $imageDesktop = get_template_directory_uri() . '/assets/images/about/bg-hero-ab-desktop.jpg';
+        $imageMobile = get_template_directory_uri() . '/assets/images/about/bg-hero-about-mobile.jpg';
+        yutaka_hero_section_shared($title, 'お知らせ / プレスリリース', $imageDesktop, $imageMobile);
+        ?>
 
         <?php
         while (have_posts()):
             the_post();
             get_template_part('template-parts/content-post');
-            get_template_part('template-parts/blog/related-posts');
-            get_template_part('template-parts/shared/contact-section');
         endwhile;
         ?>
 

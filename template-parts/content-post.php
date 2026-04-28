@@ -5,6 +5,16 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  * @package yutaka
  */
+
+$post_date = get_the_date('Y/m/d');
+$categories = get_the_terms(get_the_ID(), 'category-news');
+if (empty($categories) || is_wp_error($categories)) {
+    // Fallback to standard WP categories
+    $wp_cats = get_the_category();
+    $category_name = !empty($wp_cats) ? esc_html($wp_cats[0]->name) : '';
+} else {
+    $category_name = esc_html($categories[0]->name);
+}
 ?>
 
 <div class="container container-content">
@@ -12,27 +22,13 @@
     <article id="post-<?php the_ID(); ?>" <?php post_class('article-post'); ?>>
         <header class="entry-header">
             <div class="entry-meta">
-                <span class="posted-on">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                        <circle cx="6" cy="6" r="6" fill="#e9aeb6" />
-                    </svg>
-                    <?php echo get_the_date('Y.m.d'); ?>
-                </span>
-                <?php
-                $categories = get_the_category();
-                if (!empty($categories)):
-                    foreach ($categories as $category): ?>
-                        <span class="cat-links">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                                <circle cx="6" cy="6" r="6" fill="#00c7d0" />
-                            </svg>
-                            <?php echo esc_html($category->name); ?>
-                        </span>
-                    <?php endforeach;
-                endif;
-                ?>
+                <span class="posted-on"><?php echo esc_html($post_date); ?></span>
+                <?php if ($category_name): ?>
+                    <span class="cat-links"><?php echo $category_name; ?></span>
+                <?php endif; ?>
             </div>
             <?php the_title('<h1 class="entry-title">', '</h1>'); ?>
+            <div class="entry-divider"></div>
         </header>
 
         <?php if (has_post_thumbnail()): ?>
