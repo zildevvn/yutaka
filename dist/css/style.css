@@ -6605,6 +6605,15 @@ ul li::before {
   margin: 0;
   width: 100%;
 }
+.wpcf7-form .item-group__right > p > span {
+  width: 100%;
+  display: flex;
+  font-size: 12px;
+  line-height: 30.54px;
+  letter-spacing: 0.01em;
+  font-weight: 400;
+  font-family: "Hiragino Sans", sans-serif;
+}
 .wpcf7-form .item-group__right input,
 .wpcf7-form .item-group__right textarea {
   border-radius: 5px;
@@ -8038,16 +8047,11 @@ body.logged-in .mobile-menu-overlay {
   }
 }
 .home .news-section__btn {
-  margin-top: 75px;
-}
-@media (max-width: 1023.98px) {
-  .home .news-section__btn {
-    margin-top: 48px;
-  }
+  margin-top: 43px;
 }
 @media (max-width: 767.98px) {
   .home .news-section__btn {
-    margin-top: 30px;
+    margin-top: 24px;
   }
 }
 .home .news-section__btn a {
@@ -8076,11 +8080,16 @@ body.logged-in .mobile-menu-overlay {
   }
 }
 .home .news-section__list {
-  margin-top: 40px;
+  margin-top: 75px;
+}
+@media (max-width: 1023.98px) {
+  .home .news-section__list {
+    margin-top: 48px;
+  }
 }
 @media (max-width: 767.98px) {
   .home .news-section__list {
-    margin-top: 28px;
+    margin-top: 30px;
   }
 }
 .home .news-section .news-item {
@@ -10101,6 +10110,22 @@ body.logged-in .mobile-menu-overlay {
     margin-top: 30px;
   }
 }
+.page-template-sell-a-business-template .transaction-section__content .yutaka-heading-line {
+  padding-left: 14px;
+  line-height: 24px;
+}
+.page-template-sell-a-business-template .transaction-section__content .note {
+  font-size: 14px;
+  line-height: 35.12px;
+  font-weight: 300;
+}
+@media (max-width: 767.98px) {
+  .page-template-sell-a-business-template .transaction-section__content .note {
+    font-size: 12px;
+    line-height: 28px;
+    margin-top: -20px;
+  }
+}
 .page-template-sell-a-business-template .transaction-section p,
 .page-template-sell-a-business-template .transaction-section ul li {
   font-size: 16px;
@@ -10131,12 +10156,12 @@ body.logged-in .mobile-menu-overlay {
   margin-bottom: 14px !important;
 }
 .page-template-sell-a-business-template .safe-section {
-  padding: 80px 0;
+  padding: 0 0 80px 0;
   background: #fff;
 }
 @media (max-width: 767.98px) {
   .page-template-sell-a-business-template .safe-section {
-    padding: 32px 0;
+    padding: 0 0 32px 0;
   }
 }
 .page-template-sell-a-business-template .safe-section h2, .page-template-sell-a-business-template .safe-section .h2 {

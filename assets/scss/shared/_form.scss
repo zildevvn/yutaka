@@ -97,6 +97,16 @@
                 width: 100%;
             }
 
+            >p>span {
+                width: 100%;
+                display: flex;
+                font-size: 12px;
+                line-height: 30.54px;
+                letter-spacing: 0.01em;
+                font-weight: 400;
+                font-family: $font-third;
+            }
+
             input,
             textarea {
                 border-radius: 5px;

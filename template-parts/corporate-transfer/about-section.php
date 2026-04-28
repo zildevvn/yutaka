@@ -4,7 +4,7 @@
         <p class="mb-0">案件情報は、内容や進捗に応じて随時更新しております。</p>
         <p>気になる案件がございましたら、詳細をご案内いたしますので、お問い合わせください。</p>
 
-
-        <a href="#!" class="btn"> M&A案件リストへ</a>
+        <?php $link = home_url('/about-vendors/') ?>
+        <a href="<?php echo $link ?>" class="btn"> M&A案件リストへ</a>
     </div>
 </section>

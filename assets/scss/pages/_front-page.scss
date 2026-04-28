@@ -680,14 +680,10 @@
         }
 
         &__btn {
-            margin-top: 75px;
-
-            @include media-breakpoint-down(lg) {
-                margin-top: 48px;
-            }
+            margin-top: 43px;
 
             @include media-breakpoint-down(md) {
-                margin-top: 30px;
+                margin-top: 24px;
             }
 
             a {
@@ -717,10 +713,14 @@
         }
 
         &__list {
-            margin-top: 40px;
+            margin-top: 75px;
+
+            @include media-breakpoint-down(lg) {
+                margin-top: 48px;
+            }
 
             @include media-breakpoint-down(md) {
-                margin-top: 28px;
+                margin-top: 30px;
             }
         }
 

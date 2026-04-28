@@ -368,6 +368,23 @@
             @include media-breakpoint-down(md) {
                 margin-top: 30px;
             }
+
+            .yutaka-heading-line {
+                padding-left: 14px;
+                line-height: 24px;
+            }
+
+            .note {
+                font-size: 14px;
+                line-height: 35.12px;
+                font-weight: 300;
+
+                @include media-breakpoint-down(md) {
+                    font-size: 12px;
+                    line-height: 28px;
+                    margin-top: -20px;
+                }
+            }
         }
 
         p,
@@ -406,11 +423,11 @@
     }
 
     .safe-section {
-        padding: 80px 0;
+        padding: 0 0 80px 0;
         background: #fff;
 
         @include media-breakpoint-down(md) {
-            padding: 32px 0;
+            padding: 0 0 32px 0;
         }
 
         h2 {

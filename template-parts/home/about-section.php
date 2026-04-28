@@ -15,7 +15,7 @@
         <div class="about-section__content">
             <div class="item">
                 <p>TSUNAGUは、<b>小規模M&A・会社売買を専門とする</b></p>
-                <p><b>Growth Partners M&Aの承継支援サービスです。</b></p>
+                <p><b>Growth Partners M&Aの承継支援サービス</b> です。</p>
                 <p>一般的なM&Aに限らず、法人格のみの譲渡・買 収（会社売買）を含む、<br />
                     数十万円規模からの小規模案件にも対応しています。</p>
             </div>

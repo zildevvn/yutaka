@@ -16,6 +16,7 @@ get_header();
     <?php get_template_part('template-parts/sell-business/selling-section'); ?>
     <?php get_template_part('template-parts/sell-business/preparation-section'); ?>
     <?php get_template_part('template-parts/sell-business/transaction-section'); ?>
+    <?php get_template_part('template-parts/sell-business/safe-section'); ?>
     <?php get_template_part('template-parts/home/recommend-section'); ?>
 </main>
 <?php get_footer(); ?>
