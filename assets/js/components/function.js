@@ -48,10 +48,7 @@ import 'swiper/css/effect-fade';
                     delay: 5000,
                     disableOnInteraction: false,
                 },
-                navigation: {
-                    nextEl: '.hero-section .swiper-button-next',
-                    prevEl: '.hero-section .swiper-button-prev',
-                },
+
             });
         }
     }
@@ -93,20 +90,20 @@ import 'swiper/css/effect-fade';
 
         const container = $('#company-main-container');
 
-        $(document).on('click', '.company-filter a, .company-pagination a', function(e) {
+        $(document).on('click', '.company-filter a, .company-pagination a', function (e) {
             e.preventDefault();
-            
+
             if ($(this).hasClass('company-filter__all')) {
                 $(this).siblings('.company-filter__list').addClass('is-expanded');
                 $(this).hide();
             }
 
             const href = $(this).attr('href');
-            if(!href || href === '#') return;
+            if (!href || href === '#') return;
 
             const urlObj = new URL(href, window.location.href);
             const params = new URLSearchParams(urlObj.search);
-            
+
             let paged = params.get('paged') || 1;
             const pageMatch = urlObj.pathname.match(/\/page\/(\d+)/);
             if (pageMatch) {
@@ -122,37 +119,54 @@ import 'swiper/css/effect-fade';
 
             container.css('opacity', '0.5');
 
-            $.post(ajax_object.ajax_url, data, function(response) {
-                if(response.success) {
+            $.post(ajax_object.ajax_url, data, function (response) {
+                if (response.success) {
                     container.html(response.data);
-                    
+
                     // Update active classes on sidebar
                     $('.company-filter__list a').removeClass('active');
                     if (data.industry) {
-                        $('.company-filter__list a').each(function() {
-                            if($(this).attr('href').indexOf('industry=' + data.industry) !== -1) {
+                        $('.company-filter__list a').each(function () {
+                            if ($(this).attr('href').indexOf('industry=' + data.industry) !== -1) {
                                 $(this).addClass('active');
                             }
                         });
                     }
                     if (data.region) {
-                        $('.company-filter__list a').each(function() {
-                            if($(this).attr('href').indexOf('region=' + data.region) !== -1) {
+                        $('.company-filter__list a').each(function () {
+                            if ($(this).attr('href').indexOf('region=' + data.region) !== -1) {
                                 $(this).addClass('active');
                             }
                         });
                     }
-                    
+
                     window.history.pushState({}, '', href);
-                    
+
                     $('html, body').animate({
                         scrollTop: $('.company-section').offset().top - 100
                     }, 500);
                 }
                 container.css('opacity', '1');
-            }).fail(function() {
+            }).fail(function () {
                 container.css('opacity', '1');
             });
+        });
+    }
+
+
+    function initBackToTop() {
+        const $btnTop = $('.btn-top');
+        $(window).on('scroll', function () {
+            if ($(this).scrollTop() > 100) {
+                $btnTop.addClass('is-visible');
+            } else {
+                $btnTop.removeClass('is-visible');
+            }
+        });
+
+        $btnTop.on('click', function (e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
 
@@ -161,5 +175,6 @@ import 'swiper/css/effect-fade';
         initHeaderScroll();
         initBuyerCarousel();
         initCompanyFilter();
+        initBackToTop();
     });
 })(jQuery); 

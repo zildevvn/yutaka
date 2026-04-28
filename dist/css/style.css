@@ -6938,6 +6938,30 @@ body.logged-in .mobile-menu-overlay {
 .main-footer {
   background: #fff;
 }
+.main-footer .btn-top {
+  position: fixed;
+  right: 23px;
+  bottom: 30px;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  border: none;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  background: #f48400;
+  border-radius: 4px;
+}
+.main-footer .btn-top svg path {
+  stroke: #fff;
+}
+.main-footer .btn-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
 .main-footer-top {
   background: #f2f2f2;
   padding-top: 46px;
