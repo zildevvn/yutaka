@@ -5,7 +5,7 @@ $sliders = [
         'heading' => '最高の出口を、<br/>最高の入り口へ。',
         'sub_heading' => '解散だけでは終わらせない。<br/>会社の価値を、次の担い手へ。',
         'btnText' => 'お問い合わせ',
-        'btnLink' => '#!',
+        'btnLink' => '/contact/',
         'bgImage' => '',
         'bgImageMb' => '',
         'image' => 'image-hero-001.png',
@@ -15,7 +15,7 @@ $sliders = [
         'heading' => '最高の出口を、<br/>最高の入り口へ。',
         'sub_heading' => '解散だけでは終わらせない。<br/>会社の価値を、次の担い手へ。',
         'btnText' => 'お問い合わせ',
-        'btnLink' => '#!',
+        'btnLink' => '/contact/',
         'bgImage' => 'bg-hero-001.jpg',
         'bgImageMb' => 'bg-hero-mb-001.png',
         'image' => 'image-hero-002.png',
@@ -50,7 +50,10 @@ $sliders = [
                                     <?php echo $slide['sub_heading'] ?>
                                 </p>
 
-                                <?php yutaka_get_button($slide['btnText'], $slide['btnLink']) ?>
+                                <?php
+                                $link = home_url($slide['btnLink']);
+                                yutaka_get_button($slide['btnText'], $link);
+                                ?>
                             </div>
                             <div class="swiper-slide__image">
                                 <img src="<?php echo get_template_directory_uri() . '/assets/images/home/' . $slide['image'] ?>"

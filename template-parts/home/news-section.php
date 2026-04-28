@@ -15,12 +15,10 @@
         <?php if ($news_query->have_posts()): ?>
             <div class="news-section__list">
                 <?php
-                $is_new_threshold = strtotime('-30 days');
                 while ($news_query->have_posts()):
                     $news_query->the_post();
                     $post_date = get_the_date('Y/m/d');
-                    $post_time = get_the_time('U');
-                    $is_new = $post_time >= $is_new_threshold;
+                    $is_new = get_field('is_new');
                     $categories = get_the_terms(get_the_ID(), 'category-news');
                     $category_name = (!is_wp_error($categories) && !empty($categories)) ? esc_html($categories[0]->name) : 'お知らせ';
                     ?>

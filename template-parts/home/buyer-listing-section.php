@@ -20,7 +20,10 @@ $query = new WP_Query($args);
                 <div class="buyer-listing-section__carousel swiper">
                     <div class="swiper-wrapper">
                         <?php while ($query->have_posts()):
-                            $query->the_post(); ?>
+                            $query->the_post();
+                            $is_news = get_field('is_new_buy');
+                            $number = get_field('number_buy');
+                            ?>
                             <div class="buyer-item swiper-slide">
                                 <div class="buyer-item__img">
                                     <?php if (has_post_thumbnail()): ?>
@@ -30,8 +33,15 @@ $query = new WP_Query($args);
                                     <?php endif; ?>
 
                                     <div class="buyer-item__badges">
-                                        <div class="buyer-item__badge-new">NEW</div>
-                                        <div class="buyer-item__badge-id">No.0000</div>
+                                        <?php if ($is_news): ?>
+                                            <div class="buyer-item__badge-new">NEW</div>
+                                        <?php endif; ?>
+
+                                        <?php if (!empty($number)): ?>
+                                            <div class="buyer-item__badge-id">
+                                                No.<?php echo esc_html($number); ?>
+                                            </div>
+                                        <?php endif; ?>
                                     </div>
                                 </div>
 
