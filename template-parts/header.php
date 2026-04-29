@@ -154,26 +154,28 @@ $cta_header = get_field('cta_header', 'option');
                 <?php endif; ?>
             </div>
 
-            <div class="mobile-contact_actions mt-auto">
 
-                <?php if ($phone): ?>
-                    <a href="tel:<?php echo $phone; ?>" class="header-phone d-flex align-items-end">
-                        <img src="<?= get_template_directory_uri() ?>/assets/images/icon-phone.png" alt="phone">
-
-                        <p class="mb-0 text-center">
-                            電話番号
-                            <span class="d-flex">
-                                <?php echo $phone; ?>
-                            </span>
-                        </p>
-
-                    </a>
-                <?php endif; ?>
-
-                <?php if (!empty($cta_header)): ?>
-                    <?php yutaka_get_button($cta_header['title'], $cta_header['url'], '_self', '') ?>
-                <?php endif; ?>
-            </div>
         </div>
+    </div>
+
+    <div class="mobile-contact_actions mt-auto">
+
+        <?php if ($phone): ?>
+            <a href="tel:<?php echo $phone; ?>" class="header-phone d-flex align-items-end">
+                <img src="<?= get_template_directory_uri() ?>/assets/images/icon-phone.png" alt="phone">
+
+                <p class="mb-0 text-center">
+                    電話番号
+                    <span class="d-flex">
+                        <?php echo $phone; ?>
+                    </span>
+                </p>
+
+            </a>
+        <?php endif; ?>
+
+        <?php if (!empty($cta_header)): ?>
+            <?php yutaka_get_button($cta_header['title'], $cta_header['url'], '_self', '') ?>
+        <?php endif; ?>
     </div>
 </div>
