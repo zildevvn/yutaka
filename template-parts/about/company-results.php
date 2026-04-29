@@ -54,6 +54,8 @@ $company_query = new WP_Query($query_args);
             $revenue = get_field('revenue');
             $revenueprice = get_field('price');
             $reason_for_sale = get_field('reason_for_sale');
+            $company_number = get_field('company_number');
+            $is_new = get_field('is_new');
 
             // Get Industry terms
             $industry_terms = get_the_terms(get_the_ID(), 'industry');
@@ -95,8 +97,12 @@ $company_query = new WP_Query($query_args);
                 <div class="company-item__body">
                     <div class="company-item__image">
                         <div class="company-item__badges">
-                            <span class="badge-new">NEW</span>
-                            <span class="badge-no">No.<?php echo str_pad(get_the_ID(), 4, '0', STR_PAD_LEFT); ?></span>
+                            <?php if ($is_new): ?>
+                                <span class="badge-new">NEW</span>
+                            <?php endif ?>
+                            <?php if (!empty($company_number)): ?>
+                                <span class="badge-no">No.<?php echo $company_number ?></span>
+                            <?php endif ?>
                         </div>
                         <img src="<?php echo esc_url($thumbnail); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
                     </div>

@@ -6509,6 +6509,12 @@ ul li::before {
   font-family: "Noto Sans JP", sans-serif;
 }
 
+.wpcf7-form .wpcf7-response-output {
+  text-align: center;
+  font-size: 16px;
+  line-height: 30.54px;
+  letter-spacing: 0.01em;
+}
 .wpcf7-form .item-group {
   display: flex;
   gap: 30px;
@@ -6613,6 +6619,13 @@ ul li::before {
   letter-spacing: 0.01em;
   font-weight: 400;
   font-family: "Hiragino Sans", sans-serif;
+  flex-wrap: wrap;
+}
+.wpcf7-form .item-group__right > p > span > span {
+  width: 100%;
+  font-size: 10px;
+  line-height: 25px;
+  letter-spacing: 0.01em;
 }
 .wpcf7-form .item-group__right input,
 .wpcf7-form .item-group__right textarea {
@@ -6620,12 +6633,17 @@ ul li::before {
   border: 1.5px solid #dfdfdf;
   background: #ffdfe0;
   width: 100%;
+  color: #293337;
 }
 @media (max-width: 767.98px) {
   .wpcf7-form .item-group__right input,
   .wpcf7-form .item-group__right textarea {
     border-width: 1px;
   }
+}
+.wpcf7-form .item-group__right input::placeholder,
+.wpcf7-form .item-group__right textarea::placeholder {
+  color: #989ba0;
 }
 .wpcf7-form .item-group__right textarea::placeholder,
 .wpcf7-form .item-group__right input::placeholder,
@@ -6634,7 +6652,6 @@ ul li::before {
   font-size: 16px;
   line-height: 30.54px;
   letter-spacing: 0.01em;
-  color: #989ba0;
 }
 .wpcf7-form .item-group__right textarea {
   height: 138px;

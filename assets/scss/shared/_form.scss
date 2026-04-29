@@ -1,4 +1,11 @@
 .wpcf7-form {
+    .wpcf7-response-output {
+        text-align: center;
+        font-size: 16px;
+        line-height: 30.54px;
+        letter-spacing: 0.01em;
+    }
+
     .item-group {
         display: flex;
         gap: 30px;
@@ -105,6 +112,14 @@
                 letter-spacing: 0.01em;
                 font-weight: 400;
                 font-family: $font-third;
+                flex-wrap: wrap;
+
+                >span {
+                    width: 100%;
+                    font-size: 10px;
+                    line-height: 25px;
+                    letter-spacing: 0.01em;
+                }
             }
 
             input,
@@ -113,9 +128,14 @@
                 border: 1.5px solid #dfdfdf;
                 background: #ffdfe0;
                 width: 100%;
+                color: $color-gray-light;
 
                 @include media-breakpoint-down(md) {
                     border-width: 1px;
+                }
+
+                &::placeholder {
+                    color: #989ba0;
                 }
             }
 
@@ -126,7 +146,7 @@
                 font-size: 16px;
                 line-height: 30.54px;
                 letter-spacing: 0.01em;
-                color: #989ba0;
+
             }
 
             textarea {
