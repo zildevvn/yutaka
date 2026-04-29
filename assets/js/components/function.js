@@ -44,10 +44,10 @@ import 'swiper/css/effect-fade';
                 fadeEffect: {
                     crossFade: true
                 },
-                autoplay: {
-                    delay: 5000,
-                    disableOnInteraction: false,
-                },
+                // autoplay: {
+                //     delay: 5000,
+                //     disableOnInteraction: false,
+                // },
 
             });
         }
@@ -166,10 +166,10 @@ import 'swiper/css/effect-fade';
                     $('.company-filter__list a').each(function () {
                         const h = $(this).attr('href');
                         if (!h || h === '#') return;
-                        
+
                         const urlObj = new URL(h, window.location.href);
                         const params = new URLSearchParams(urlObj.search);
-                        
+
                         if (h.startsWith('?industry=')) {
                             if (data.industry && params.get('industry') === data.industry) {
                                 $(this).addClass('active');
