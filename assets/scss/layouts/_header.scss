@@ -221,6 +221,10 @@
     overflow-y: scroll;
     overflow-x: hidden;
 
+    @supports (height: 100svh) {
+        height: 100svh;
+    }
+
     ul li:before {
         content: none
     }
