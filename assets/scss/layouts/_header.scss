@@ -158,15 +158,8 @@
 
         &.is-scrolled {
             transform: translateY(0);
-            // background: rgba(255, 255, 255, 0.8);
-            // backdrop-filter: blur(10px);
             opacity: 1;
             visibility: visible;
-            // box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-
-            // @include media-breakpoint-down(lg) {
-            //     top: 10px;
-            // }
         }
 
         body.logged-in & {
@@ -301,6 +294,79 @@
                 flex-shrink: 0;
                 width: 100%;
                 max-width: 44px;
+            }
+        }
+    }
+
+    .mobile-contact_actions {
+        margin-top: 24px !important;
+        display: flex;
+        gap: 8px;
+
+
+        .header-phone,
+        .yutaka-button {
+            flex: 1;
+            height: 52px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center !important;
+            justify-content: center;
+            text-decoration: none;
+            padding: 0 5px;
+        }
+
+        .header-phone {
+            background: $color-primary;
+            gap: 8px;
+            color: #fff;
+
+            img {
+                width: 100%;
+                height: auto;
+                max-width: 18px;
+                flex-shrink: 0;
+                margin-bottom: 0;
+            }
+
+            p {
+                font-family: $font-third;
+                font-size: 10px;
+                line-height: 1.2;
+                letter-spacing: 0.05em;
+                margin-bottom: 0;
+                text-align: center;
+                flex-shrink: 0;
+
+                @include media-breakpoint-down(xl) {
+                    font-size: 10px;
+                }
+
+                span {
+                    display: block;
+                    font-family: $font-fourth;
+                    font-size: 12px;
+                    line-height: 1.2;
+                    font-weight: 700;
+                    letter-spacing: 0.05em;
+                    width: 100%;
+
+                    @media (max-width: 374.98px) {
+                        font-size: 10px;
+                    }
+                }
+            }
+        }
+
+        .yutaka-button {
+            margin-left: 0;
+            font-size: 13px;
+            font-weight: 700;
+            gap: 6px;
+
+            img {
+                max-width: 10px;
+                margin-top: 2px;
             }
         }
     }
