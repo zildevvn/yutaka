@@ -6867,6 +6867,7 @@ body.logged-in .header-main#header-scroll {
   .header-humberger .humberger-btn {
     width: 52px;
     height: 52px;
+    margin: -1px;
   }
 }
 .header-humberger .humberger-btn span {
@@ -10801,7 +10802,7 @@ body.page-template-about-template .company-section .company-filter__list li a.ac
   display: inline-block;
   width: 100%;
 }
-body.page-template-about-template .company-section .company-filter__list.is-expanded li:nth-child(n+4) {
+body.page-template-about-template .company-section .company-filter__list.is-expanded li:nth-child(n+7) {
   display: block;
 }
 body.page-template-about-template .company-section .company-filter__list .company-filter__children {

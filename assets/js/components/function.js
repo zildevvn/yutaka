@@ -93,12 +93,17 @@ import 'swiper/css/effect-fade';
         $(document).on('click', '.company-filter a, .company-pagination a', function (e) {
             e.preventDefault();
 
-            if ($(this).hasClass('company-filter__all')) {
-                $(this).siblings('.company-filter__list').addClass('is-expanded');
-                $(this).hide();
+            const $this = $(this);
+            const isShowAll = $this.hasClass('company-filter__all');
+
+            if (isShowAll) {
+                const $list = $this.siblings('.company-filter__list');
+                $list.addClass('is-expanded');
+                $list.find('li:hidden').hide().slideDown(400);
+                $this.fadeOut(400);
             }
 
-            const href = $(this).attr('href');
+            const href = $this.attr('href');
             if (!href || href === '#') return;
 
             const urlObj = new URL(href, window.location.href);
@@ -183,9 +188,11 @@ import 'swiper/css/effect-fade';
 
                     window.history.pushState({}, '', finalHref);
 
-                    $('html, body').animate({
-                        scrollTop: $('.company-section').offset().top - 100
-                    }, 500);
+                    if (!isShowAll) {
+                        $('html, body').animate({
+                            scrollTop: $('.company-section').offset().top - 100
+                        }, 500);
+                    }
                 }
                 container.css('opacity', '1');
             }).fail(function () {
