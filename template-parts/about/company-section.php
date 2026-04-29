@@ -71,11 +71,14 @@ function yutaka_count_companies_by_industry(string $industry_slug, string $regio
                                 echo '<li><a href="#">不動産・ビルメンテナンス (100)</a></li>';
                                 echo '<li><a href="#">電気・ガス・エネルギー (38)</a></li>';
                             } else {
+                                $page_one_url = get_pagenum_link(1);
                                 foreach ($industries as $industry) {
                                     $active_class   = ($industry_filter === $industry->slug) ? 'active' : '';
-                                    $url            = '?industry=' . $industry->slug;
-                                    if (!empty($region_filter))
-                                        $url .= '&region=' . $region_filter;
+                                    $url = add_query_arg(array(
+                                        'industry' => $industry->slug,
+                                        'region'   => $region_filter ?: false,
+                                    ), $page_one_url);
+                                    
                                     // Count scoped to active region so numbers update on region change
                                     $scoped_count = yutaka_count_companies_by_industry($industry->slug, $region_filter);
                                     $empty_class  = ($scoped_count === 0) ? ' is-empty' : '';
@@ -96,7 +99,7 @@ function yutaka_count_companies_by_industry(string $industry_slug, string $regio
                         $show_all_industries = (empty($industries) || is_wp_error($industries)) ? true : (count($industries) > 3);
                         if ($show_all_industries):
                             ?>
-                            <a href="?<?php echo !empty($region_filter) ? 'region=' . $region_filter : ''; ?>"
+                            <a href="<?php echo esc_url(add_query_arg(array('industry' => false, 'region' => $region_filter ?: false), get_pagenum_link(1))); ?>"
                                 class="company-filter__all">すべて表示</a>
                         <?php endif; ?>
                     </div>
@@ -129,9 +132,10 @@ function yutaka_count_companies_by_industry(string $industry_slug, string $regio
                             } else {
                                 foreach ($parent_regions as $region) {
                                     $active_class = ($region_filter === $region->slug) ? 'active' : '';
-                                    $url = '?region=' . $region->slug;
-                                    if (!empty($industry_filter))
-                                        $url .= '&industry=' . $industry_filter;
+                                    $url = add_query_arg(array(
+                                        'region'   => $region->slug,
+                                        'industry' => $industry_filter ?: false,
+                                    ), $page_one_url);
 
                                     // Fetch child terms for this parent
                                     $child_regions = get_terms(array(
@@ -147,9 +151,10 @@ function yutaka_count_companies_by_industry(string $industry_slug, string $regio
                                         echo '<ul class="company-filter__children">';
                                         foreach ($child_regions as $child) {
                                             $child_active = ($region_filter === $child->slug) ? 'active' : '';
-                                            $child_url = '?region=' . $child->slug;
-                                            if (!empty($industry_filter))
-                                                $child_url .= '&industry=' . $industry_filter;
+                                            $child_url = add_query_arg(array(
+                                                'region'   => $child->slug,
+                                                'industry' => $industry_filter ?: false,
+                                            ), $page_one_url);
                                             echo '<li><a class="' . esc_attr($child_active) . '" href="' . esc_url($child_url) . '">' . esc_html($child->name) . '</a></li>';
                                         }
                                         echo '</ul>';
@@ -164,7 +169,7 @@ function yutaka_count_companies_by_industry(string $industry_slug, string $regio
                         $show_all_regions = (empty($parent_regions) || is_wp_error($parent_regions)) ? true : (count($parent_regions) > 6);
                         if ($show_all_regions):
                             ?>
-                            <a href="?<?php echo !empty($industry_filter) ? 'industry=' . $industry_filter : ''; ?>"
+                            <a href="<?php echo esc_url(add_query_arg(array('region' => false, 'industry' => $industry_filter ?: false), get_pagenum_link(1))); ?>"
                                 class="company-filter__all">すべて表示</a>
                         <?php endif; ?>
                     </div>

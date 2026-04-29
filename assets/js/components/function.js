@@ -104,10 +104,24 @@ import 'swiper/css/effect-fade';
             const urlObj = new URL(href, window.location.href);
             const params = new URLSearchParams(urlObj.search);
 
-            let paged = params.get('paged') || 1;
-            const pageMatch = urlObj.pathname.match(/\/page\/(\d+)/);
-            if (pageMatch) {
-                paged = pageMatch[1];
+            const isFilter = $(this).closest('.company-filter').length > 0;
+            let paged = 1;
+            let finalHref = href;
+
+            if (isFilter) {
+                paged = 1;
+                // For filters, we ensure we reset to page 1 by stripping any pagination from the current path
+                const cleanPath = window.location.pathname.replace(/\/page\/\d+\/?$/, '/');
+                const cleanUrl = new URL(href, window.location.origin + cleanPath);
+                finalHref = cleanUrl.pathname + cleanUrl.search;
+            } else {
+                // Pagination click
+                paged = params.get('paged') || 1;
+                const pageMatch = urlObj.pathname.match(/\/page\/(\d+)/);
+                if (pageMatch) {
+                    paged = pageMatch[1];
+                }
+                finalHref = href;
             }
 
             const data = {
@@ -167,7 +181,7 @@ import 'swiper/css/effect-fade';
                         }
                     });
 
-                    window.history.pushState({}, '', href);
+                    window.history.pushState({}, '', finalHref);
 
                     $('html, body').animate({
                         scrollTop: $('.company-section').offset().top - 100
