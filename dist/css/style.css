@@ -6851,11 +6851,6 @@ ul li::before {
   opacity: 1;
   visibility: visible;
 }
-@media (max-width: 1023.98px) {
-  .header-main#header-scroll.is-scrolled {
-    top: 10px;
-  }
-}
 body.logged-in .header-main#header-scroll {
   top: 32px;
 }
