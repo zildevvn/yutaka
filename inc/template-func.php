@@ -85,7 +85,7 @@ function yutaka_breadcrumbs_company($title)
     <p class="yutaka-breadcrumbs d-flex align-items-center">
         <a href="<?= home_url() ?>">ホーム</a>
         <span>＞</span>
-        <a href="<?= home_url('/company') ?>">売り情報</a>
+        <a href="<?= home_url('/about-vendors') ?>">売り情報一覧</a>
         <span>＞</span>
         <?= $title ?>
     </p>
