@@ -77,6 +77,20 @@ function yutaka_breadcrumbs($title)
     </p>
 <?php }
 
+
+function yutaka_breadcrumbs_company($title)
+{
+    ?>
+
+    <p class="yutaka-breadcrumbs d-flex align-items-center">
+        <a href="<?= home_url() ?>">ホーム</a>
+        <span>＞</span>
+        <a href="<?= home_url('/company') ?>">売り情報</a>
+        <span>＞</span>
+        <?= $title ?>
+    </p>
+<?php }
+
 function yutaka_hero_section_shared($title = '', $sub_title = '', $image = '', $image_mb = '')
 { ?>
     <section class="yutaka-section hero-section-shared">
@@ -88,7 +102,11 @@ function yutaka_hero_section_shared($title = '', $sub_title = '', $image = '', $
         <div class="container">
             <div class="hero-section-shared__box">
                 <div class="hero-section-shared__top">
-                    <?php yutaka_breadcrumbs($title) ?>
+                    <?php if (is_singular('company')): ?>
+                        <?php yutaka_breadcrumbs_company($title) ?>
+                    <?php else: ?>
+                        <?php yutaka_breadcrumbs($title) ?>
+                    <?php endif; ?>
                 </div>
 
                 <div class="hero-section-shared__bottom">

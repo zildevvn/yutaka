@@ -12,6 +12,7 @@ get_header();
     $imageDesktop = get_template_directory_uri() . '/assets/images/about/bg-hero-ab-desktop.jpg';
     $imageMobile = get_template_directory_uri() . '/assets/images/about/bg-hero-about-mobile.jpg';
     yutaka_hero_section_shared($title, 'Company Details', $imageDesktop, $imageMobile);
+
     ?>
 
     <div class="company-single-page">
